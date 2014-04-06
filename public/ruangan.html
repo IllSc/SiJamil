@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" class="ui" href="css/semantic.min.css">
+		<link rel="stylesheet" type="text/css" class="ui" href="css/sijamil.css">
+		<script src="js/semantic.min.js"></script>
+		<script src="js/sijamil.js"></script>
+		<script src="jquery/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<!--header menunya-->
+		<div id="header">
+			<div class="ui pointing red inverted menu segment">
+				<div class="container">
+					<div class="logo">
+						<div class="left menu">
+							<div class="item">Sijamil</div>
+						</div>
+					</div>
+					<div class="ui red inverted right menu">
+						<a class="item" href="home.html">Home</a>
+						<a class="active item" href="ruangan.html">Ruangan</a>
+						<a class="item" href="approval.html">Approval</a>
+						<a class="item">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- filter starts here -->
+		<div id="filter">
+			<div class="ui form segment">
+				<p>Filter By</p>
+				<input type="date" name="bday">
+				<form>
+					<select name="filter">
+						<option value="lantai">Lantai</option>
+						<option value="kapasitas">Kapasitas</option>
+					</select>
+				</form>
+			</div>
+		</div>
+
+		<!-- table starts here -->
+		<div id="table">
+			<table class="ui table segment">
+				<thead>
+			    	<tr>
+				    	<th>Name</th>
+				    	<th>Lantai</th>
+				    	<th>Kapasitas</th>
+					    <th>Status</th>
+					    <th>Pinjam</th>
+					    <th>Lihat Deskripsi Ruangan</th>
+
+			  		</tr>
+				</thead>
+			  	<tbody>
+				    <tr>
+				    	<td>John</td>
+				    	<td>Approved</td>
+				    	<td>None</td>
+				    	<td>None</td>
+				    	<td>
+					      	<div class="circular ui icon button">
+	  							<a href="form.html">
+	  								<i class="ok circle icon"></i>
+	  							</a>
+	  						</div>
+  						</td>
+  						<td>
+					      	<div class="circular ui icon button">
+	  							<i class="ok circle icon"></i>
+	  						</div>
+  						</td>
+				    </tr>
+				    <tr>
+				    	<td>John</td>
+				    	<td>Approved</td>
+				    	<td>None</td>
+				    	<td>None</td>
+				    	<td>
+					      	<div class="circular ui icon button">
+	  							<a href="form.html">
+	  								<i class="ok circle icon"></i>
+	  							</a>
+	  						</div>
+  						</td>
+  						<td>
+					      	<div class="circular ui icon button">
+	  							<i class="ok circle icon"></i>
+	  						</div>
+  						</td>
+				    </tr>
+				    <tr>
+				    	<td>John</td>
+				    	<td>Approved</td>
+				    	<td>None</td>
+				    	<td>None</td>
+				    	<td>
+					      	<div class="circular ui icon button">
+	  							<a href="form.html">
+	  								<i class="ok circle icon"></i>
+	  							</a>
+	  						</div>
+  						</td>
+  						<td>
+					      	<div class="circular ui icon button">
+	  							<i class="ok circle icon"></i>
+	  						</div>
+  						</td>
+				    </tr>
+			  	</tbody>
+			</table>
+		</div>
+
+		<!--foooter starts here -->
+		<div id="footer">
+			<div class="center">Copyright Sijamil 2014</div>
+		</div>
+	</body>
+</html>

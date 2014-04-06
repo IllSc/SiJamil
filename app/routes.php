@@ -13,5 +13,23 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home',array('title' => 'Home'));
 });
+Route::get('/form',function()
+{
+	return View::make('form',array('title' => 'Form'));
+});
+Route::get('/approval',function()
+{
+	return View::make('approval',array('title' => 'Approval'));
+});
+Route::get('/ruangan',function()
+{
+	return View::make('ruangan',array('title' => 'Ruangan'));
+});
+Route::get('/humas',function()
+{
+	return View::make('humas',array('title' => 'Humas'));
+});
+
+

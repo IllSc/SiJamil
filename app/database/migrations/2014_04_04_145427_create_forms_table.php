@@ -21,7 +21,7 @@ class CreateFormsTable extends Migration {
 			$table->string('keperluan');
 			$table->string('fasilitas');
 			$table->integer('jumlah_peserta');
-			$table->boolean('status');
+			$table->string('status');
 			$table->timestamps();
 		});
 	}
