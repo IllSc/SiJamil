@@ -28,7 +28,7 @@
 					<div class="ui red inverted right menu">
 						<a class="item {{ Request::is('home') ? 'active' : '' }}" href="home.html">Home</a>
 						<a class="item {{ Request::is('ruangan') ? 'active' : '' }}" href="ruangan.html">Ruangan</a>
-						<a class="item {{ Request::is('approval') ? 'active' : '' }}" href="approval.html">Approval</a>
+						<a class="item {{ Request::is('approval') ? 'active' : ''}}" href="approval.html">Approval</a>
 						<a class="item">Logout</a>
 					</div>
 				</div>
