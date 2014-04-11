@@ -22,7 +22,8 @@ class LoginLogoutManager extends \BaseController {
 
 	public function logout()
 	{
-		return Redirect::away('http://scele.cs.ui.ac.id')->with('message','Mengarah ke SSO!');
+		Auth::logout(); // log the user out of our application
+		return Redirect::to('login'); // redirect the user to the login screen
 	}
 
 	public function login()
@@ -46,10 +47,11 @@ class LoginLogoutManager extends \BaseController {
 
 			// create our user data for the authentication
 			$userdata = array(
-				'email' 	=> Input::get('email'),
+				'name' 	=> Input::get('username'),
 				'password' 	=> Input::get('password')
 			);
-
+			// $ab = Hash::make('123');
+			// print_r ($ab);
 			// attempt to do the login
 			if (Auth::attempt($userdata)) {
 
@@ -57,7 +59,7 @@ class LoginLogoutManager extends \BaseController {
 				// redirect them to the secure section or whatever
 				// return Redirect::to('secure');
 				// for now we'll just echo success (even though echoing in a controller is bad)
-				echo 'SUCCESS!';
+				return View::make('home',array('title' => 'Home'));
 
 			} else {	 	
 
