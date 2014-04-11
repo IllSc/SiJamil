@@ -59,12 +59,14 @@ Route::get('/seed', function()
 
 });
 
+
 Route::get('/login', function()
 {
 	return View::make('login',array('title' => 'Login'));
 });
 
 // Route::get('/home',array('as' =>'home',LoginLogoutManager@index);
+
 Route::get('/home',array('as' =>'home',function()
 {
 	return View::make('home',array('title' => 'Home'));
@@ -86,8 +88,9 @@ Route::get('/humas',array('as'=>'humas',function()
 	return View::make('humas',array('title' => 'Humas'));
 }));
 Route::get('logout',array('as'=>'logout','uses'=>'LoginLogoutManager@logout'));
-
+Route::get('login',array('as'=>'logout','uses'=>'LoginLogoutManager@login'));
 Route::get('/ruangan/{id}','RuanganManager@show');
 Route::get('/pinjam/{id}','RuanganManager@pinjam');
 
 
+Route::post('login',array('uses'=>'LoginLogoutManager@doLogin'));
