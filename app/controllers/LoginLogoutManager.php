@@ -20,7 +20,7 @@ class LoginLogoutManager extends \BaseController {
 
 	public function logout()
 	{
-		return Redirect::away('http://sso.ui.ac.id')->with('message','Mengarah ke SSO!');
+		return Redirect::away('http://scele.cs.ui.ac.id')->with('message','Mengarah ke SSO!');
 	}
 
 	/**
