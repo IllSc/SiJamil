@@ -56,10 +56,101 @@ Route::get('/seed', function()
 	$ruangan->lantai = '2';
 	$ruangan->save();
 
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2301';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2302';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2303';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2304';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2305';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2306';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2401';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2402';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2403';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2404';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2405';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2406';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2502';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
 
 });
-
-<<<<<<< HEAD
 
 Route::get('/login', function()
 {
@@ -68,14 +159,7 @@ Route::get('/login', function()
 
 // Route::get('/home',array('as' =>'home',LoginLogoutManager@index);
 
-Route::get('/home',array('as' =>'home',function()
-=======
-Route::get('/', array('as' => 'home', function () {
-    return View::make('home');
-}))->before('auth');;
-
 Route::get('/home',array('as' =>'home','before' => 'auth',function()
->>>>>>> 025c903958d04efb679ae16f2178d8b535b8403e
 {
 	return View::make('home',array('title' => 'Home'));
 }))->before('auth');
