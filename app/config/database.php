@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'lokalan',
+	'default' => 'lokalanIvan',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -62,7 +62,17 @@ return array(
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
-		'lokalan' => array(
+		'lokalanGede' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'sijamil',
+			'username'  => 'root',
+			'password'  => '',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+		'lokalanIvan' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
 			'database'  => 'sijamil',
