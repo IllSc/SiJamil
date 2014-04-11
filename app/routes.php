@@ -38,6 +38,6 @@ Route::get('/humas',array('as'=>'humas',function()
 {
 	return View::make('humas',array('title' => 'Humas'));
 }));
-Route::get('logout','LoginLogoutManager@logout');
+Route::get('logout',array('as'=>'logout','uses'=>'LoginLogoutManager@logout'));
 
 
