@@ -59,6 +59,7 @@ Route::get('/seed', function()
 
 });
 
+<<<<<<< HEAD
 
 Route::get('/login', function()
 {
@@ -68,29 +69,36 @@ Route::get('/login', function()
 // Route::get('/home',array('as' =>'home',LoginLogoutManager@index);
 
 Route::get('/home',array('as' =>'home',function()
+=======
+Route::get('/', array('as' => 'home', function () {
+    return View::make('home');
+}))->before('auth');;
+
+Route::get('/home',array('as' =>'home','before' => 'auth',function()
+>>>>>>> 025c903958d04efb679ae16f2178d8b535b8403e
 {
 	return View::make('home',array('title' => 'Home'));
-}));
+}))->before('auth');
 Route::get('/form',array('as'=>'form',function()
 {
 	return View::make('form',array('title' => 'Form'));
-}));
+}))->before('auth');
 Route::get('/approval',array('as'=>'approval',function()
 {
 	return View::make('approval',array('title' => 'Approval'));
-}));
+}))->before('auth');
 Route::get('/ruangan',array('as'=>'ruangan',function()
 {
 	return View::make('ruangan',array('title' => 'Ruangan'));
-}));
+}))->before('auth');
 Route::get('/humas',array('as'=>'humas',function()
 {
 	return View::make('humas',array('title' => 'Humas'));
-}));
-Route::get('logout',array('as'=>'logout','uses'=>'LoginLogoutManager@logout'));
-Route::get('login',array('as'=>'logout','uses'=>'LoginLogoutManager@login'));
-Route::get('/ruangan/{id}','RuanganManager@show');
-Route::get('/pinjam/{id}','RuanganManager@pinjam');
+}))->before('auth');
+Route::get('logout',array('as'=>'logout','uses'=>'LoginLogoutManager@logout'))->before('auth');
+Route::get('login',array('as'=>'login','uses'=>'LoginLogoutManager@login'));
+Route::get('/ruangan/{id}','RuanganManager@show')->before('auth');
+Route::get('/pinjam/{id}','RuanganManager@pinjam')->before('auth');
 
 
 Route::post('login',array('uses'=>'LoginLogoutManager@doLogin'));
