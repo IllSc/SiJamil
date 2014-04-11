@@ -12,10 +12,51 @@
 */
 
 
-
-Route::get('/', function()
+Route::get('/seed', function()
 {
-	return Redirect::route('home');
+	// return Redirect::route('home');
+	$user = new User;
+	$user->name = 'Ivan';
+	$user->password = '123';
+	$user->role = 'Civitas';
+	$user->save();
+
+	// return Redirect::route('home');
+	$user = new User;
+	$user->name = 'Ivan2';
+	$user->password = '123';
+	$user->role = 'Civitas';
+	$user->save();
+
+	// return Redirect::route('home');
+	$user = new User;
+	$user->name = 'Ivan3';
+	$user->password = '123';
+	$user->role = 'Civitas';
+	$user->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '3111';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '3112';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '3113';
+	$ruangan->kapasitas = '99';
+	$ruangan->fasilitas = 'AC';
+	$ruangan->lantai = '2';
+	$ruangan->save();
+
+
 });
 // Route::get('/home',array('as' =>'home',LoginLogoutManager@index);
 Route::get('/home',array('as' =>'home',function()
