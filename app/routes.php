@@ -15,6 +15,10 @@ Route::get('/', function()
 {
 	return View::make('home',array('title' => 'Home'));
 });
+Route::get('/login', function()
+{
+	return View::make('login',array('title' => 'Login'));
+});
 Route::get('/form',function()
 {
 	return View::make('form',array('title' => 'Form'));

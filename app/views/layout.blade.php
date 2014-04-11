@@ -4,7 +4,7 @@
 		{{HTML::style('css/sijamil.css');}}
 		{{HTML::style('slider/jquery.bxslider.css');}}
 		{{HTML::script('js/semantic.min.js');}}
-		{{HTML::script('jquery/semantic.min.js');}}
+<!--		{{HTML::script('jquery/semantic.min.js');}} -->
 		{{HTML::script('slider/jquery.bxslider.min.js');}}
 		<title>{{ isset($title) ? $title : 'Sesuatu'}}</title>
 		<!-- <link rel="stylesheet" type="text/css" class="ui" href="css/semantic.min.css"> -->

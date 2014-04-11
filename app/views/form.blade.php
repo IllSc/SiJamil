@@ -35,6 +35,6 @@
 				<label>Keperluan</label>
 				<textarea placeholder="Keperluan"></textarea>
 			</div>
-			<div class="ui blue submit button">Login</div>
+			<div class="ui blue submit button">Submit</div>
 </div>
 @stop
