@@ -15,17 +15,17 @@
 	<!-- bxSlider CSS file -->
 	<!-- <link href="slider/jquery.bxslider.css" rel="stylesheet" /> -->
 	</head>
-<body>
-	{{ Form::open(array('url' => '','class'=>'ui form segment')) }}
-	<div class="field">
-	{{ Form::label('Username') }}
-		{{ Form::text('username',null,['class'=>'ui input']) }}
-	</div>
-	<div class="field">
-	{{ Form::label('Password') }}
-		{{ Form::text('password',null,['class'=>'ui input']) }}
-	</div>
-	{{ Form::submit('Submit',['class'=>'ui blue submit button']) }}
-	{{ Form::close() }}
-</body>
+	<body>
+		{{ Form::open(array('url' => '','class'=>'ui form segment')) }}
+		<div class="field">
+		{{ Form::label('Username') }}
+			{{ Form::text('username',null,['class'=>'ui input']) }}
+		</div>
+		<div class="field">
+		{{ Form::label('Password') }}
+			{{ Form::text('password',null,['class'=>'ui input']) }}
+		</div>
+		{{ Form::submit('Submit',['class'=>'ui blue submit button']) }}
+		{{ Form::close() }}
+	</body>
 </html>

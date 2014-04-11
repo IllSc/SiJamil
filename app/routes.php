@@ -58,20 +58,18 @@ Route::get('/seed', function()
 
 
 });
-<<<<<<< HEAD
+
 Route::get('/login', function()
 {
 	return View::make('login',array('title' => 'Login'));
 });
-Route::get('/form',function()
-=======
+
 // Route::get('/home',array('as' =>'home',LoginLogoutManager@index);
 Route::get('/home',array('as' =>'home',function()
 {
 	return View::make('home',array('title' => 'Home'));
 }));
 Route::get('/form',array('as'=>'form',function()
->>>>>>> 953edf43ca19919cab7071693640e6d57b45218f
 {
 	return View::make('form',array('title' => 'Form'));
 }));
