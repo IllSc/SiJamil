@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2014 at 12:25 AM
+-- Generation Time: Apr 12, 2014 at 04:55 AM
 -- Server version: 5.5.34-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.4
 
@@ -52,7 +52,8 @@ CREATE TABLE IF NOT EXISTS `forms` (
 
 CREATE TABLE IF NOT EXISTS `jadwal` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `jam` time NOT NULL,
+  `jamSelesai` time NOT NULL,
+  `jamMulai` time NOT NULL,
   `tanggal` date NOT NULL,
   `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `keterangan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -61,20 +62,6 @@ CREATE TABLE IF NOT EXISTS `jadwal` (
   `no_ruangan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `menyetujui_form`
---
-
-CREATE TABLE IF NOT EXISTS `menyetujui_form` (
-  `id_form` int(10) unsigned NOT NULL,
-  `id_user` int(10) unsigned NOT NULL,
-  `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id_form`),
-  KEY `menyetujui_form_id_user_foreign` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -117,7 +104,16 @@ CREATE TABLE IF NOT EXISTS `ruangan` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `ruangan`
+--
+
+INSERT INTO `ruangan` (`id`, `nomor_ruangan`, `kapasitas`, `fasilitas`, `lantai`, `created_at`, `updated_at`) VALUES
+(1, '3111', 99, 'AC', 2, '2014-04-11 11:48:05', '2014-04-11 11:48:05'),
+(2, '3112', 99, 'AC', 2, '2014-04-11 11:48:06', '2014-04-11 11:48:06'),
+(3, '3113', 99, 'AC', 2, '2014-04-11 11:48:06', '2014-04-11 11:48:06');
 
 -- --------------------------------------------------------
 
@@ -133,7 +129,30 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `role` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `created_at`, `updated_at`, `name`, `password`, `role`) VALUES
+(4, '2014-04-11 11:48:05', '2014-04-11 11:48:05', 'Ivan', '123', 'Civitas'),
+(5, '2014-04-11 11:48:05', '2014-04-11 11:48:05', 'Ivan2', '123', 'Civitas'),
+(6, '2014-04-11 11:48:05', '2014-04-11 11:48:05', 'Ivan3', '123', 'Civitas');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_form`
+--
+
+CREATE TABLE IF NOT EXISTS `user_form` (
+  `id_form` int(10) unsigned NOT NULL,
+  `id_user` int(10) unsigned NOT NULL,
+  `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_form`),
+  KEY `menyetujui_form_id_user_foreign` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Constraints for dumped tables
@@ -147,9 +166,9 @@ ALTER TABLE `forms`
   ADD CONSTRAINT `forms_id_peminjam_foreign` FOREIGN KEY (`id_peminjam`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `menyetujui_form`
+-- Constraints for table `user_form`
 --
-ALTER TABLE `menyetujui_form`
+ALTER TABLE `user_form`
   ADD CONSTRAINT `menyetujui_form_id_user_foreign` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `menyetujui_form_id_form_foreign` FOREIGN KEY (`id_form`) REFERENCES `forms` (`id`);
 

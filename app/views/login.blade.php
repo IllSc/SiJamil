@@ -16,7 +16,7 @@
 	<!-- <link href="slider/jquery.bxslider.css" rel="stylesheet" /> -->
 	</head>
 <body>
-	{{ Form::open(array('url' => '','class'=>'ui form segment')) }}
+	{{ Form::open(array('url' => 'login','class'=>'ui form segment')) }}
 	<div class="field">
 	{{ Form::label('Username') }}
 		{{ Form::text('username',null,['class'=>'ui input']) }}

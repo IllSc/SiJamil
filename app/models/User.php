@@ -9,6 +9,13 @@ class User extends Eloquent{
 	 */
 	public $table = 'users';
 
-	
+	public function forms()
+	{
+		return $this->hasMany('Form','id_peminjam');
+	}
+
+	public function penyetuju(){
+		return $this->belongsToMany('Form','id_form');
+	}
 
 }
