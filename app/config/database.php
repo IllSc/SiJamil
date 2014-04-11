@@ -72,6 +72,16 @@ return array(
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
+		'lokalanIbam' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'sijamil',
+			'username'  => 'root',
+			'password'  => '',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
 		'lokalanIvan' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
