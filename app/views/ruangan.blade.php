@@ -34,17 +34,18 @@
 				    	<td>John</td>
 				    	<td>Approved</td>
 				    	<td>None</td>
-				    	<td>None</td>
+				    	<td>Bisa</td>
 				    	<td>
 					      	<div class="circular ui icon button">
-	  							<a href="form.html">
+	  							<a href="{{action('RuanganManager@pinjam',2)}}">
 	  								<i class="ok circle icon"></i>
 	  							</a>
 	  						</div>
   						</td>
   						<td>
 					      	<div class="circular ui icon button">
-	  							<i class="ok circle icon"></i>
+					      		<a href="{{action('RuanganManager@show',2)}}" class="">
+	  							<i class="ok circle icon"></i></a>
 	  						</div>
   						</td>
 				    </tr>

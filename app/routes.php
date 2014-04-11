@@ -40,4 +40,7 @@ Route::get('/humas',array('as'=>'humas',function()
 }));
 Route::get('logout',array('as'=>'logout','uses'=>'LoginLogoutManager@logout'));
 
+Route::get('/ruangan/{id}','RuanganManager@show');
+Route::get('/pinjam/{id}','RuanganManager@pinjam');
+
 

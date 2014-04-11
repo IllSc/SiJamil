@@ -13,7 +13,7 @@ class AddForeignKeyIdRuanganToFormsTable extends Migration {
 	public function up()
 	{
 		Schema::table('forms', function(Blueprint $table) {
-			$table->integer('id_ruangan');
+			$table->integer('id_ruangan')->unsigned();
 			$table->foreign('id_ruangan')->references('id')->on('ruangan');
 		});
 	}
