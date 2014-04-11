@@ -11,25 +11,33 @@
 |
 */
 
+
+
 Route::get('/', function()
 {
-	return View::make('home',array('title' => 'Home'));
+	return Redirect::route('home');
 });
-Route::get('/form',function()
+// Route::get('/home',array('as' =>'home',LoginLogoutManager@index);
+Route::get('/home',array('as' =>'home',function()
+{
+	return View::make('home',array('title' => 'Home'));
+}));
+Route::get('/form',array('as'=>'form',function()
 {
 	return View::make('form',array('title' => 'Form'));
-});
-Route::get('/approval',function()
+}));
+Route::get('/approval',array('as'=>'approval',function()
 {
 	return View::make('approval',array('title' => 'Approval'));
-});
-Route::get('/ruangan',function()
+}));
+Route::get('/ruangan',array('as'=>'ruangan',function()
 {
 	return View::make('ruangan',array('title' => 'Ruangan'));
-});
-Route::get('/humas',function()
+}));
+Route::get('/humas',array('as'=>'humas',function()
 {
 	return View::make('humas',array('title' => 'Humas'));
-});
+}));
+Route::get('logout','LoginLogoutManager@logout');
 
 
