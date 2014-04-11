@@ -15,6 +15,7 @@ class RuanganManager extends \BaseController {
 	{
 		return View::make('form',array('title'=> 'Form','id'=>$id));
 	}
+	
 
 	
 

@@ -1,5 +1,5 @@
 <?php
 
-class Jadwal extends \Eloquent {
-	protected $table = 'jadwal';
+class Jadwal extends Eloquent {
+	public $table = 'jadwal';
 }
