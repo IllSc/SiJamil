@@ -59,7 +59,6 @@ Route::get('/seed', function()
 
 });
 
-<<<<<<< HEAD
 
 Route::get('/login', function()
 {
@@ -68,14 +67,11 @@ Route::get('/login', function()
 
 // Route::get('/home',array('as' =>'home',LoginLogoutManager@index);
 
-Route::get('/home',array('as' =>'home',function()
-=======
 Route::get('/', array('as' => 'home', function () {
     return View::make('home');
 }))->before('auth');;
 
 Route::get('/home',array('as' =>'home','before' => 'auth',function()
->>>>>>> 025c903958d04efb679ae16f2178d8b535b8403e
 {
 	return View::make('home',array('title' => 'Home'));
 }))->before('auth');

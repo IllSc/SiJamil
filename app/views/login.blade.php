@@ -15,11 +15,6 @@
 	<!-- bxSlider CSS file -->
 	<!-- <link href="slider/jquery.bxslider.css" rel="stylesheet" /> -->
 	</head>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 025c903958d04efb679ae16f2178d8b535b8403e
 <body>
 	{{ Form::open(array('url' => 'login','class'=>'ui form segment')) }}
 	<div class="field">
@@ -33,8 +28,4 @@
 	{{ Form::submit('Submit',['class'=>'ui blue submit button']) }}
 	{{ Form::close() }}
 </body>
-<<<<<<< HEAD
-=======
-
->>>>>>> 025c903958d04efb679ae16f2178d8b535b8403e
 </html>
