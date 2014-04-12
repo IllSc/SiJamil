@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2014 at 04:55 AM
+-- Generation Time: Apr 12, 2014 at 09:31 AM
 -- Server version: 5.5.34-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.4
 
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(99) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(66) COLLATE utf8_unicode_ci NOT NULL,
   `role` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `created_at`, `updated_at`, `name`, `password`, `role`) VALUES
-(4, '2014-04-11 11:48:05', '2014-04-11 11:48:05', 'Ivan', '123', 'Civitas'),
+(4, '2014-04-11 11:48:05', '2014-04-11 11:48:05', 'Ivan', '$2y$10$Xp27HmOX8jj3gN3aHP5TYOOTa6zbh5KxgOcEad1eU.ElM1X7o/2My', 'Civitas'),
 (5, '2014-04-11 11:48:05', '2014-04-11 11:48:05', 'Ivan2', '123', 'Civitas'),
 (6, '2014-04-11 11:48:05', '2014-04-11 11:48:05', 'Ivan3', '123', 'Civitas');
 
