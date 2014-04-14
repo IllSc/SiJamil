@@ -13,7 +13,16 @@
 	  		</tr>
 		</thead>
 	  	<tbody>
-		    <tr>
+	  	@foreach ($ruangan as $ruang)
+	  		<tr>
+	  			<td>{{$ruang->nomor_ruangan}}</td>
+	  			<td></td>
+	  			<td></td>
+	  			<td></td>
+	  			<td></td>
+	  		</tr>
+	  	@endforeach
+		    <!-- <tr>
 		      	<td>John</td>
 		      	<td>Approved</td>
 		      	<td>None</td>
@@ -32,7 +41,7 @@
 		      	<td>Approved</td>
 		      	<td>None</td>
 		      	<td>None</td>
-		    </tr>
+		    </tr> -->
 	  	</tbody>
 	</table>
 </div>

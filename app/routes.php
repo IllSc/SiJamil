@@ -10,6 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+use Faker\Factory as Faker;
 
 
 Route::get('/seed', function()
@@ -166,7 +167,32 @@ Route::get('/seed', function()
 
 
 });
+Route::get('/seed/forms',function(){
+	$form = new Isian;
+	$faker = Faker::create();
+	$form->email = $faker->safeEmail;
+	$form->tanggal = $faker->date();
+	$form->jam_peminjaman = $faker->time();
+	$form->keperluan = $faker->sentence($nbWords = 6);
+	$form->fasilitas = $faker->sentence($nbWords = 2);
+	$form->jumlah_peserta = 29;
+	$form->status = 'disamakan';
 
+	$pengguna = User::find(4);
+	$ruangan = Ruangan::find(9);
+
+	$form->ruangan()->associate($ruangan);
+	$form->user()->associate($pengguna);
+	$form->save();
+
+});
+Route::get('/seed/penyetuju',function(){
+	$user = new User;
+	$user->name = 'Seseorang';
+	$user->password = Hash::make('234');
+	$user->role = 'Penyetuju';
+	$user->save();
+});
 Route::get('/login', function()
 {
 	return View::make('login',array('title' => 'Login'));

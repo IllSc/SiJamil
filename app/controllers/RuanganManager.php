@@ -9,7 +9,9 @@ class RuanganManager extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return "Jalan Gan!";
+		$ruangan = Ruangan::find($id);
+		//$ruangan->title =  'Deskripsi ruangan '.$ruangan->nomor_ruangan;
+		return View::make('deskripsi',$ruangan);
 	}
 
 	public function pinjam($id)

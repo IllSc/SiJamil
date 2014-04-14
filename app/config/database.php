@@ -26,11 +26,13 @@ return array(
 	|
 	*/
 
-
 	'default' => 'lokalanGede',
 	'default' => 'lokalanAgung',
 
 	'default' => 'lokalanIbam',
+
+	'default' => 'lokalanIvan',
+
 
 	/*
 	|--------------------------------------------------------------------------
