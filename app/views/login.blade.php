@@ -15,10 +15,6 @@
 	<!-- bxSlider CSS file -->
 	<!-- <link href="slider/jquery.bxslider.css" rel="stylesheet" /> -->
 	</head>
-<<<<<<< HEAD
-
-=======
->>>>>>> ab8f10f4b138252c594a00bbba9270926e65a137
 <body>
 	{{ Form::open(array('url' => 'login','class'=>'ui form segment')) }}
 	<div class="field">
@@ -27,13 +23,9 @@
 	</div>
 	<div class="field">
 	{{ Form::label('Password') }}
-		{{ Form::text('password',null,['class'=>'ui input']) }}
+		{{ Form::password('password',null,['class'=>'ui input']) }}
 	</div>
 	{{ Form::submit('Submit',['class'=>'ui blue submit button']) }}
 	{{ Form::close() }}
 </body>
-<<<<<<< HEAD
-
-=======
->>>>>>> ab8f10f4b138252c594a00bbba9270926e65a137
 </html>
