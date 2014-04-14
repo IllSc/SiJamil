@@ -106,6 +106,7 @@ Route::get('/seed', function()
 	$ruangan->lantai = '2';
 	$ruangan->save();
 
+<<<<<<< HEAD
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2402';
 	$ruangan->kapasitas = '99';
@@ -151,6 +152,8 @@ Route::get('/seed', function()
 
 
 });
+=======
+>>>>>>> ab8f10f4b138252c594a00bbba9270926e65a137
 
 Route::get('/login', function()
 {
@@ -159,6 +162,13 @@ Route::get('/login', function()
 
 // Route::get('/home',array('as' =>'home',LoginLogoutManager@index);
 
+<<<<<<< HEAD
+=======
+Route::get('/', array('as' => 'home', function () {
+    return View::make('home');
+}))->before('auth');;
+
+>>>>>>> ab8f10f4b138252c594a00bbba9270926e65a137
 Route::get('/home',array('as' =>'home','before' => 'auth',function()
 {
 	return View::make('home',array('title' => 'Home'));

@@ -13,14 +13,14 @@ class UsersTableSeeder extends Seeder {
 		{
 			User::create(array(
 				'username' => $faker->userName,
-				'role' => 'Civitas'
+				'role' => 'Civitas',
 				'password' => $faker->word
 			));
 		}
 
 		User::create(array(
 				'username' => $faker->userName,
-				'role' => 'Humas'
+				'role' => 'Humas',
 				'password' => $faker->word
 		));
 	}
