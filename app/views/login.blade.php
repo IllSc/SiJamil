@@ -23,7 +23,7 @@
 	</div>
 	<div class="field">
 	{{ Form::label('Password') }}
-		{{ Form::text('password',null,['class'=>'ui input']) }}
+		{{ Form::password('password',null,['class'=>'ui input']) }}
 	</div>
 	{{ Form::submit('Submit',['class'=>'ui blue submit button']) }}
 	{{ Form::close() }}

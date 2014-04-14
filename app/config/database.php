@@ -97,7 +97,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'sijamil',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => '455123',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
