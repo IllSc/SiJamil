@@ -1,29 +1,41 @@
 @extends('layout')
 @section('content')
-	{{ Form::open(array('url' => '','class'=>'ui form segment')) }}
+	{{ Form::open(array('url' => '/pinjam/{$id}','class'=>'ui form segment')) }}
+	<div class="field">
+	{{ Form::label('Email') }}
+		{{ Form::text('email',null,['class'=>'ui input']) }}
+	</div>
 	<div class="field">
 	{{ Form::label('Nomor Handphone') }}
 		{{ Form::text('handphone',null,['class'=>'ui input']) }}
 	</div>
 	<div class="field">
-	{{ Form::label('Waktu Peminjaman') }}
-		{{ Form::text('password',null,['class'=>'ui input']) }}
+	{{ Form::label('Tanggal Mulai') }}
+		{{ Form::text('tgl_mulai',null,['class'=>'ui input']) }}
 	</div>
 	<div class="field">
-	{{ Form::label('Nama Ruang') }}
-		{{ Form::text('password',null,['class'=>'ui input']) }}
+	{{ Form::label('Tanggal Selesai') }}
+		{{ Form::text('tgl_selesai',null,['class'=>'ui input']) }}
+	</div>
+	<div class="field">
+	{{ Form::label('Jam Mulai') }}
+		{{ Form::text('jam_mulai',null,['class'=>'ui input']) }}
+	</div>
+	<div class="field">
+	{{ Form::label('Jam Selesai') }}
+		{{ Form::text('jam_selesai',null,['class'=>'ui input']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Nama Barang') }}
-		{{ Form::text('password',null,['class'=>'ui input']) }}
+		{{ Form::text('fasilitas',null,['class'=>'ui input']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Jumlah Peserta') }}
-		{{ Form::text('password',null,['class'=>'ui input']) }}
+		{{ Form::text('peserta',null,['class'=>'ui input']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Keperluan') }}
-		{{ Form::textarea('password',null,['class'=>'ui input']) }}
+		{{ Form::textarea('keperluan',null,['class'=>'ui input']) }}
 	</div>
 	{{ Form::submit('Submit',['class'=>'ui blue submit button']) }}
 	{{ Form::close() }}
