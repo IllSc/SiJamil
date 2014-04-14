@@ -82,6 +82,16 @@ return array(
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
+		'lokalanAgung' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'sijamil',
+			'username'  => 'agungputrap',
+			'password'  => 'agungputra17',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
 		'lokalanIvan' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
