@@ -38,8 +38,8 @@ Route::get('/seed', function()
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '3111';
 	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
@@ -58,96 +58,110 @@ Route::get('/seed', function()
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2301';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '50';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2302';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '50';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2303';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '40';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2304';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '150';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2305';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '150';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2306';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '50';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '3';
 	$ruangan->save();
 
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2401';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '30';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '4';
 	$ruangan->save();
 
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2402';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '150';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '4';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2403';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '150';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '4';
 	$ruangan->save();
 
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2404';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '40';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '4';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2405';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '50';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '4';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2406';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '50';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '4';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2502';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
+	$ruangan->kapasitas = '60';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '5';
+	$ruangan->save();
+	
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2601';
+	$ruangan->kapasitas = '30';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '6';
+	$ruangan->save();
+	
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2602';
+	$ruangan->kapasitas = '75';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '6';
 	$ruangan->save();
 
 
@@ -184,6 +198,10 @@ Route::get('/humas',array('as'=>'humas',function()
 	return View::make('humas',array('title' => 'Humas'));
 }))->before('auth');
 
+Route::get('/deskripsi',array('as'=>'deskripsi',function()
+{
+	return View::make('deskripsi',array('title' => 'deskripsi'));
+}))->before('auth');
 Route::get('logout',array('as'=>'logout','uses'=>'LoginLogoutManager@logout'))->before('auth');
 Route::get('login',array('as'=>'login','uses'=>'LoginLogoutManager@login'));
 Route::get('/ruangan','RuanganManager@ruanganHome')->before('auth');

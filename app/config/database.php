@@ -26,7 +26,15 @@ return array(
 	|
 	*/
 
+<<<<<<< HEAD
 	'default' => 'lokalanGede',
+=======
+<<<<<<< HEAD
+	'default' => 'lokalanAgung',
+=======
+	'default' => 'lokalanIbam',
+>>>>>>> a51bac31f3c3d6c463746810c6c9d1008231adc1
+>>>>>>> 3d7aeac967b957bc592304e095dc1a5abda2becb
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,6 +86,16 @@ return array(
 			'database'  => 'sijamil',
 			'username'  => 'root',
 			'password'  => '',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+		'lokalanAgung' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'sijamil',
+			'username'  => 'agungputrap',
+			'password'  => 'agungputra17',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
