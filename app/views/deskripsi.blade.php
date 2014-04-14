@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<!-- table starts here -->
+
 <div id="table">
 	<table class="ui table segment">
 		<thead>
@@ -8,40 +8,20 @@
 		    	<th>Name</th>
 		    	<th>Lantai</th>
 		    	<th>Kapasitas</th>
-			    <th>Status</th>
+			    
 			    <th>Fasilitas</th>
 	  		</tr>
 		</thead>
 	  	<tbody>
-	  	@foreach ($ruangan as $ruang)
-	  		<tr>
-	  			<td>{{$ruang->nomor_ruangan}}</td>
-	  			<td></td>
-	  			<td></td>
-	  			<td></td>
-	  			<td></td>
-	  		</tr>
-	  	@endforeach
-		    <!-- <tr>
-		      	<td>John</td>
-		      	<td>Approved</td>
-		      	<td>None</td>
-		      	<td>None</td>
-		      	<td>None</td>
-		    </tr>
+			
 		    <tr>
-		      	<td>John</td>
-		      	<td>Approved</td>
-		      	<td>None</td>
-		      	<td>None</td>
-		      	<td>None</td>
+		      	<td>{{$ruangan->nomor_ruangan}}</td>
+	  			<td>{{$ruangan->lantai}}</td>
+	  			<td>{{$ruangan->kapasitas}}</td> 
+	  			<!-- <td></td> -->
+	  			<td>{{$ruangan->fasilitas}}</td>
 		    </tr>
-		    <tr>
-		      	<td>John</td>
-		      	<td>Approved</td>
-		      	<td>None</td>
-		      	<td>None</td>
-		    </tr> -->
+		    
 	  	</tbody>
 	</table>
 </div>

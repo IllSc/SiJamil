@@ -11,7 +11,7 @@ class RuanganManager extends \BaseController {
 	{
 		$ruangan = Ruangan::find($id);
 		//$ruangan->title =  'Deskripsi ruangan '.$ruangan->nomor_ruangan;
-		return View::make('deskripsi',$ruangan);
+		return View::make('deskripsi',compact('ruangan'));
 	}
 
 	public function pinjam($id)

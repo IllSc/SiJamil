@@ -50,7 +50,7 @@
 							</td>
 							<td>
 								<div class="circular ui icon button">
-									<a href="{{action('RuanganManager@show',2)}}" class="">
+									<a href="{{action('RuanganManager@show',$r->id)}}" class="">
 									<i class="ok circle icon"></i></a>
 								</div>
 							</td>
