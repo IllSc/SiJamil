@@ -26,15 +26,11 @@ return array(
 	|
 	*/
 
-<<<<<<< HEAD
+
 	'default' => 'lokalanGede',
-=======
-<<<<<<< HEAD
 	'default' => 'lokalanAgung',
-=======
+
 	'default' => 'lokalanIbam',
->>>>>>> a51bac31f3c3d6c463746810c6c9d1008231adc1
->>>>>>> 3d7aeac967b957bc592304e095dc1a5abda2becb
 
 	/*
 	|--------------------------------------------------------------------------
