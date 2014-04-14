@@ -172,7 +172,13 @@ Route::get('/seed/forms',function(){
 	$form->save();
 
 });
-
+Route::get('/seed/penyetuju',function(){
+	$user = new User;
+	$user->name = 'Seseorang';
+	$user->password = Hash::make('234');
+	$user->role = 'Penyetuju';
+	$user->save();
+});
 Route::get('/login', function()
 {
 	return View::make('login',array('title' => 'Login'));
