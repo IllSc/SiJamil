@@ -11,6 +11,8 @@
 						<option value="lantai">Lantai</option>
 						<option value="kapasitas">Kapasitas</option>
 					</select>
+					</br>
+					{{ Form::submit('filter',['class'=>'ui blue submit button']) }}
 				</form>
 			</div>
 		</div>
