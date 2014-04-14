@@ -43,5 +43,4 @@ class RuanganManager extends \BaseController {
 		
 		return Redirect::action('RuanganManager@ruanganHome');
 	}
-
 }
