@@ -184,6 +184,10 @@ Route::get('/humas',array('as'=>'humas',function()
 	return View::make('humas',array('title' => 'Humas'));
 }))->before('auth');
 
+Route::get('/deskripsi',array('as'=>'deskripsi',function()
+{
+	return View::make('deskripsi',array('title' => 'deskripsi'));
+}))->before('auth');
 Route::get('logout',array('as'=>'logout','uses'=>'LoginLogoutManager@logout'))->before('auth');
 Route::get('login',array('as'=>'login','uses'=>'LoginLogoutManager@login'));
 Route::get('/ruangan','RuanganManager@ruanganHome')->before('auth');
