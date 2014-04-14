@@ -160,7 +160,6 @@ Route::get('/login', function()
 	return View::make('login',array('title' => 'Login'));
 });
 
-// Route::get('/home',array('as' =>'home',LoginLogoutManager@index);
 
 <<<<<<< HEAD
 =======
@@ -189,10 +188,12 @@ Route::get('/humas',array('as'=>'humas',function()
 {
 	return View::make('humas',array('title' => 'Humas'));
 }))->before('auth');
+
 Route::get('logout',array('as'=>'logout','uses'=>'LoginLogoutManager@logout'))->before('auth');
 Route::get('login',array('as'=>'login','uses'=>'LoginLogoutManager@login'));
+Route::get('/ruangan','RuanganManager@ruanganHome')->before('auth');
 Route::get('/ruangan/{id}','RuanganManager@show')->before('auth');
 Route::get('/pinjam/{id}','RuanganManager@pinjam')->before('auth');
 
-
+Route::post('/pinjam/{id}','RuanganManager@simpanPinjaman')->before('auth');
 Route::post('login',array('uses'=>'LoginLogoutManager@doLogin'));

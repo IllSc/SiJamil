@@ -32,4 +32,8 @@
 	{{ Form::submit('Submit',['class'=>'ui blue submit button']) }}
 	{{ Form::close() }}
 </body>
+<<<<<<< HEAD
+
+=======
+>>>>>>> ab8f10f4b138252c594a00bbba9270926e65a137
 </html>
