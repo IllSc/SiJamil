@@ -2,19 +2,8 @@
 @section('content')
 
 <!-- filter starts here -->
-		<div id="filter">
-			<div class="ui form segment">
-				<p>Filter By</p>
-				<input type="date" name="bday">
-				<form>
-					<select name="filter">
-						<option value="lantai">Lantai</option>
-						<option value="kapasitas">Kapasitas</option>
-					</select>
-					</br>
-					{{ Form::submit('filter',['class'=>'ui blue submit button']) }}
-				</form>
-			</div>
+		<div class="ui form segment">
+			<input type="date" name="bday">
 		</div>
 		
 		@if($ruangan->isEmpty())

@@ -37,36 +37,15 @@ Route::get('/seed', function()
 	$user->save();
 
 	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '3111';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
-	$ruangan->lantai = '3';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '3112';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '3113';
-	$ruangan->kapasitas = '99';
-	$ruangan->fasilitas = 'AC';
-	$ruangan->lantai = '2';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2301';
-	$ruangan->kapasitas = '50';
+	$ruangan->kapasitas = '30';
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2302';
-	$ruangan->kapasitas = '50';
+	$ruangan->kapasitas = '40';
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '3';
 	$ruangan->save();
