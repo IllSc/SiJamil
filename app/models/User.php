@@ -13,7 +13,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface{
 
 	public function forms()
 	{
-		return $this->hasMany('Form','id_peminjam');
+		return $this->hasMany('Isian','id_peminjam');
 	}
 
 	public function penyetuju(){
