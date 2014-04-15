@@ -209,7 +209,7 @@ Route::get('/home',array('as' =>'home','before' => 'auth',function()
 	} else if($role == "Perlengkapan"){
 		return Redirect::action('PenyetujuManager@perlengkapan');
 	} else {
-		return Redirect::action('RuanganManager@ruanganHome');
+		return View::make('home',array('title' => 'Home'));
 	}
 	
 }))->before('auth');

@@ -14,8 +14,11 @@
 				@foreach($forms as $f)
 				    <tr>
 				      	<td>{{$f->ruangan->nomor_ruangan}}</td>
-						
+						@if($f->status != "Diterima")
+						<td>{{"Menunggu Persetujuan ".$f->status}}</td>
+						@else
 						<td>{{$f->status}}</td>
+						@endif
 				    </tr>
 				@endforeach
 			  	</tbody>

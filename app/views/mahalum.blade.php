@@ -8,7 +8,9 @@
 				    	<th>Lantai</th>
 				    	<th>Kapasitas</th>
 					    <th>Status</th>
-					    <th>Waktu</th>
+					    <th>Jam Mulai</th>
+						<th>Jam Selesai</th>
+						<th>Keperluan</th>
 					    <th>Approve</th>
 					    <th>Tolak</th>
 
@@ -20,8 +22,10 @@
 			  				<td>{{$form->ruangan->nomor_ruangan}}</td>
 			  				<td>{{$form->ruangan->lantai}}</td>
 			  				<td>{{$form->ruangan->kapasitas}}</td>
-			  				<td>{{$form->status}}</td>
+			  				<td>{{"Menunggu Persetujuan ".$form->status}}</td>
 			  				<td>{{$form->jam_peminjaman}}</td>
+							<td>{{$form->jam_selesai}}</td>
+							<td>{{$form->keperluan}}</td>
 			  				<td><div class="circular ui icon button">
 									<a href="{{action('PenyetujuManager@toPerlengkapan',$form->id)}}">
 										<i class="ok circle icon"></i>
