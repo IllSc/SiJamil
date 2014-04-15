@@ -3,10 +3,7 @@
 	<head>
 		{{HTML::style('css/semantic.min.css');}}
 		{{HTML::style('css/sijamil.css');}}
-		{{HTML::style('slider/jquery.bxslider.css');}}
 		{{HTML::script('js/semantic.min.js');}}
-<!--		{{HTML::script('jquery/semantic.min.js');}} -->
-		{{HTML::script('slider/jquery.bxslider.min.js');}}
 		{{HTML::script('js/jquery-1.11.0.min.js');}}
 		{{HTML::script('js/jquery-2.1.0.min.js');}}
 		{{HTML::script('js/jquery.tablesort.min.js');}}

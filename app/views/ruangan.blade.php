@@ -5,7 +5,16 @@
 		<div class="ui form segment">
 			<input type="date" name="bday">
 		</div>
-		
+		@foreach ($errors as $error)
+			<?php print_r($error) ?>
+		@endforeach
+
+	{{$errors}}
+		@foreach ($errors as $error)
+			{{ $error}}
+		@endforeach
+
+		<?php echo $errors->first('email'); ?>
 		@if($ruangan->isEmpty())
 		<p>tidak ada ruangan pada database</p>
 		@else

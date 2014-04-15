@@ -15,8 +15,9 @@
 	<!-- bxSlider CSS file -->
 	<!-- <link href="slider/jquery.bxslider.css" rel="stylesheet" /> -->
 	</head>
-
+	
 <body>
+	{{ $errors}}
 	{{ Form::open(array('url' => 'login','class'=>'ui form segment')) }}
 	<div class="field">
 	{{ Form::label('Username') }}
