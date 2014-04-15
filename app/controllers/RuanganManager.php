@@ -27,7 +27,7 @@ class RuanganManager extends \BaseController {
 	public function simpanPinjaman($idRuangan){
 		$input = Input::all();
 		
-		$form = New Form;
+		$form = New Isian;
 		$form->email = $input['email'];
 		$form->nomor_telepon = $input['handphone'];
 		$form->tanggal_mulai = $input['tgl_mulai'];
