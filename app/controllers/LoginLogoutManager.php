@@ -59,7 +59,16 @@ class LoginLogoutManager extends \BaseController {
 				// redirect them to the secure section or whatever
 				// return Redirect::to('secure');
 				// for now we'll just echo success (even though echoing in a controller is bad)
-				return View::make('home',array('title' => 'Home'));
+				$role = Auth::user()->role;
+				if($role == "Humas"){
+					return Redirect::action('PenyetujuManager@humas');
+				} else if($role == "Mahalum"){
+					return Redirect::action('PenyetujuManager@mahalum');
+				} else if($role == "Perlengkapan"){
+					return Redirect::action('PenyetujuManager@perlengkapan');
+				} else {
+					return Redirect::action('RuanganManager@ruanganHome');
+				}
 
 			} else {	 	
 
