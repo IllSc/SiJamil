@@ -18,7 +18,7 @@ class PenyetujuManager extends \BaseController {
 
 	public function perlengkapan()
 	{
-		$forms = Isian::where('status','=','Perlengkapan');
+		$forms = Isian::where('status','=','Perlengkapan')->get();
 
 		return View::make('perlengkapan',compact('forms'));
 	}
@@ -36,7 +36,7 @@ class PenyetujuManager extends \BaseController {
 			return Redirect::action('PenyetujuManager@mahalum');
 		}
 		else if($peran == "Perlengkapan"){
-			return Redirect::action('PenyetujuManager@perlengkpapan');
+			return Redirect::action('PenyetujuManager@perlengkapan');
 		}
 		
 	}

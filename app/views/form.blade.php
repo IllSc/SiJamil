@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-	{{ Form::open(array('url' => '/pinjam/{$id}','class'=>'ui form segment')) }}
+	{{ Form::open(array('url' => '/simpanPinjam/'.$id,'class'=>'ui form segment')) }}
 	<div class="field">
 	{{ Form::label('Email') }}
 		{{ Form::text('email',null,['class'=>'ui input']) }}
@@ -10,12 +10,8 @@
 		{{ Form::text('handphone',null,['class'=>'ui input']) }}
 	</div>
 	<div class="field">
-	{{ Form::label('Tanggal Mulai') }}
-		{{ Form::text('tgl_mulai',null,['class'=>'ui input']) }}
-	</div>
-	<div class="field">
-	{{ Form::label('Tanggal Selesai') }}
-		{{ Form::text('tgl_selesai',null,['class'=>'ui input']) }}
+	{{ Form::label('Tanggal') }}
+		{{ Form::text('tanggal',null,['class'=>'ui input']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Jam Mulai') }}

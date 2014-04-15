@@ -27,17 +27,19 @@ class RuanganManager extends \BaseController {
 	public function simpanPinjaman($idRuangan){
 		$input = Input::all();
 		
-		$form = New Form;
+		$form = New Isian;
 		$form->email = $input['email'];
 		$form->nomor_telepon = $input['handphone'];
-		$form->tanggal_mulai = $input['tgl_mulai'];
-		$form->tanggal_selesai = $input['tgl_selesai'];
-		$form->jam_mulai = $input['jam_mulai'];
+		$form->tanggal = $input['tanggal'];
+		//$form->tanggal_selesai = $input['tgl_selesai'];
+		$form->jam_peminjaman = $input['jam_mulai'];
 		$form->jam_selesai = $input['jam_selesai'];
 		$form->id_ruangan = $idRuangan;
-		$form->id = 1;
-		$form->id_peminjam = 1;
-		$form->status = 'palsu';
+		$user = Auth::user();
+		
+		$form->user()->associate($user);
+
+		$form->status = 'Humas';
 		$form->fasilitas = $input['fasilitas'];
 		$form->jumlah_peserta = $input['peserta'];
 		$form->keperluan = $input['keperluan'];

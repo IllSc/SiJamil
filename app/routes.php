@@ -201,7 +201,17 @@ Route::get('/', array('as' => 'home', function () {
 
 Route::get('/home',array('as' =>'home','before' => 'auth',function()
 {
-	return View::make('home',array('title' => 'Home'));
+	$role = AUth::user()->role;
+	if($role == "Humas"){
+		return Redirect::action('PenyetujuManager@humas');
+	} else if($role == "Mahalum"){
+		return Redirect::action('PenyetujuManager@mahalum');
+	} else if($role == "Perlengkapan"){
+		return Redirect::action('PenyetujuManager@perlengkapan');
+	} else {
+		return Redirect::action('RuanganManager@ruanganHome');
+	}
+	
 }))->before('auth');
 Route::get('/form',array('as'=>'form',function()
 {
@@ -230,7 +240,7 @@ Route::get('/ruangan','RuanganManager@ruanganHome')->before('auth');
 Route::get('/ruangan/{id}','RuanganManager@show')->before('auth');
 Route::get('/pinjam/{id}','RuanganManager@pinjam')->before('auth');
 
-Route::post('/pinjam/{id}','RuanganManager@simpanPinjaman')->before('auth');
+Route::post('/simpanPinjam/{id}','RuanganManager@simpanPinjaman')->before('auth');
 Route::post('login',array('uses'=>'LoginLogoutManager@doLogin'));
 
 

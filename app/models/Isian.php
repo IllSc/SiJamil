@@ -5,11 +5,11 @@ class Isian extends Eloquent {
 
 	public function user()
 	{
-		return $this->belongsTo('User','id_ruangan');
+		return $this->belongsTo('User','id_peminjam');
 	}
 	public function ruangan()
 	{
-		return $this->belongsTo('Ruangan','id_peminjam');
+		return $this->belongsTo('Ruangan','id_ruangan');
 	}
 
 	public function penyetuju(){
