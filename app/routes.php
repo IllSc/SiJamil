@@ -279,7 +279,8 @@ Route::get('tolak/{id}',array('before'=>array('auth','penyetuju'),'uses'=>'Penye
 Route::get('toPerlengkapan/{id}',array('before'=>array('auth','mahalum'),'uses'=>'PenyetujuManager@toPerlengkapan'));
 Route::get('setujui/{id}',array('before'=>array('auth','perlengkapan'),'uses'=>'PenyetujuManager@setujui'));
 
-
+//halaman approval civitas
+Route::get('/approval',array('before'=>array('auth'),'uses'=>'RuanganManager@lihatForm'));
 
 
 

@@ -57,5 +57,13 @@ class RuanganManager extends \BaseController {
 		return View::make('ruangan', compact('result'));
 	}
 
+	public function lihatForm(){
+		
+		$user = Auth::user();
+		//array form yang berisi semua form yang bersesuaian dengan user yang sedang aktif sekarang
+		$forms = $user->forms;
+		
+		return View::make('approval', compact('forms'));
+	}
 
 }
