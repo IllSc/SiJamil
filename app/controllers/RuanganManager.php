@@ -27,27 +27,36 @@ class RuanganManager extends \BaseController {
 	public function simpanPinjaman($idRuangan){
 		$input = Input::all();
 		
-		$form = New Isian;
-		$form->email = $input['email'];
-		$form->nomor_telepon = $input['handphone'];
-		$form->tanggal = $input['tanggal'];
-		//$form->tanggal_selesai = $input['tgl_selesai'];
-		$form->jam_peminjaman = $input['jam_mulai'];
-		$form->jam_selesai = $input['jam_selesai'];
-		$form->id_ruangan = $idRuangan;
-		$user = Auth::user();
-		
-		$form->user()->associate($user);
+		$rules = array('email'=>array('required','email'),'handphone'=>array('required','numeric'),'tanggal'=>array('required','date'),'jam_mulai'=>'required','jam_selesai'=>'required');
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator->fails()){
+			return Redirect::to('ruangan')->withErrors($validator);
+		} else {
+			$form = New Isian;
+			$form->email = $input['email'];
+			$form->nomor_telepon = $input['handphone'];
+			$form->tanggal = $input['tanggal'];
+			//$form->tanggal_selesai = $input['tgl_selesai'];
+			$form->jam_peminjaman = $input['jam_mulai'];
+			$form->jam_selesai = $input['jam_selesai'];
+			$form->id_ruangan = $idRuangan;
+			$user = Auth::user();
+			
+			$form->user()->associate($user);
+
+			
+
+			$form->status = 'Humas';
+			$form->fasilitas = $input['fasilitas'];
+			$form->jumlah_peserta = $input['peserta'];
+			$form->keperluan = $input['keperluan'];
+			$form->save();
+			
+			return Redirect::action('RuanganManager@ruanganHome');
+		}
 
 		
-
-		$form->status = 'Humas';
-		$form->fasilitas = $input['fasilitas'];
-		$form->jumlah_peserta = $input['peserta'];
-		$form->keperluan = $input['keperluan'];
-		$form->save();
-		
-		return Redirect::action('RuanganManager@ruanganHome');
 	}
 	
 	public function filterTanggal($tanggal)
