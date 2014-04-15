@@ -39,6 +39,8 @@ class RuanganManager extends \BaseController {
 		
 		$form->user()->associate($user);
 
+		
+
 		$form->status = 'Humas';
 		$form->fasilitas = $input['fasilitas'];
 		$form->jumlah_peserta = $input['peserta'];
