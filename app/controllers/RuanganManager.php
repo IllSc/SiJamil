@@ -11,7 +11,7 @@ class RuanganManager extends \BaseController {
 	{
 		$ruangan = Ruangan::find($id);
 		//$ruangan->title =  'Deskripsi ruangan '.$ruangan->nomor_ruangan;
-		return View::make('deskripsi',$ruangan);
+		return View::make('deskripsi',compact('ruangan'));
 	}
 
 	public function pinjam($id)
@@ -45,4 +45,15 @@ class RuanganManager extends \BaseController {
 		
 		return Redirect::action('RuanganManager@ruanganHome');
 	}
+	
+	public function filterTanggal($tanggal)
+	{
+		$ruangan = Ruangan::all();
+		$form_filter = Isian::where('tanggal','=',$tanggal)->get();
+		$ruangan_filter = $form_filter->ruangan()->get();
+		$result = $ruangan->diff($ruangan_filter);
+		return View::make('ruangan', compact('result'));
+	}
+
+
 }
