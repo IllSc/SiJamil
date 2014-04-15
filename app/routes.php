@@ -225,7 +225,7 @@ Route::get('/ruangan','RuanganManager@ruanganHome')->before('auth');
 Route::get('/ruangan/{id}','RuanganManager@show')->before('auth');
 Route::get('/pinjam/{id}','RuanganManager@pinjam')->before('auth');
 
-Route::post('/pinjam/{id}','RuanganManager@simpanPinjaman')->before('auth');
+Route::post('/simpanPinjam/{id}','RuanganManager@simpanPinjaman')->before('auth');
 Route::post('login',array('uses'=>'LoginLogoutManager@doLogin'));
 
 

@@ -30,7 +30,7 @@ class RuanganManager extends \BaseController {
 		$form = New Isian;
 		$form->email = $input['email'];
 		$form->nomor_telepon = $input['handphone'];
-		$form->tanggal = $input['tgl_mulai'];
+		$form->tanggal = $input['tanggal'];
 		//$form->tanggal_selesai = $input['tgl_selesai'];
 		$form->jam_peminjaman = $input['jam_mulai'];
 		$form->jam_selesai = $input['jam_selesai'];

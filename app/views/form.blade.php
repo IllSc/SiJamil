@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-	{{ Form::open(array('url' => '/pinjam/{$id}','class'=>'ui form segment')) }}
+	{{ Form::open(array('url' => '/simpanPinjam/'.$id,'class'=>'ui form segment')) }}
 	<div class="field">
 	{{ Form::label('Email') }}
 		{{ Form::text('email',null,['class'=>'ui input']) }}
