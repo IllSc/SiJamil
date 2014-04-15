@@ -10,12 +10,8 @@
 		{{ Form::text('handphone',null,['class'=>'ui input']) }}
 	</div>
 	<div class="field">
-	{{ Form::label('Tanggal Mulai') }}
-		{{ Form::text('tgl_mulai',null,['class'=>'ui input']) }}
-	</div>
-	<div class="field">
-	{{ Form::label('Tanggal Selesai') }}
-		{{ Form::text('tgl_selesai',null,['class'=>'ui input']) }}
+	{{ Form::label('Tanggal') }}
+		{{ Form::text('tanggal',null,['class'=>'ui input']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Jam Mulai') }}
