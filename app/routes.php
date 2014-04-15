@@ -186,7 +186,7 @@ Route::get('/', array('as' => 'home', function () {
 
 Route::get('/home',array('as' =>'home','before' => 'auth',function()
 {
-	$role = AUth::user()->role;
+	$role = Auth::user()->role;
 	if($role == "Humas"){
 		return Redirect::action('PenyetujuManager@humas');
 	} else if($role == "Mahalum"){
