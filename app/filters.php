@@ -38,6 +38,16 @@ Route::filter('auth', function()
 	if (Auth::guest()) return Redirect::guest('login');
 });
 
+// Route::filter('auth2', function()
+// {
+// 	if (Auth::guest()){
+// 		return Redirect::guest('login');
+// 	} else if(Auth::user()->role == "Humas") {
+// 		//
+// 	}
+// });
+
+
 
 Route::filter('auth.basic', function()
 {
