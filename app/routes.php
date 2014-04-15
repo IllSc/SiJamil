@@ -146,6 +146,8 @@ Route::get('/seed', function()
 
 
 });
+
+Route::get('auth',function(){echo(Auth::user()->role);});
 Route::get('/seed/forms',function(){
 	$form = new Isian;
 	$faker = Faker::create();
@@ -215,3 +217,50 @@ Route::get('/pinjam/{id}','RuanganManager@pinjam')->before('auth');
 
 Route::post('/pinjam/{id}','RuanganManager@simpanPinjaman')->before('auth');
 Route::post('login',array('uses'=>'LoginLogoutManager@doLogin'));
+
+
+Route::filter('mahalum',function()
+{
+	if (Auth::user()->role != "Mahalum") {
+		return Redirect::to('home');
+	}
+});
+
+Route::filter('humas',function()
+{
+	if (Auth::user()->role != "Humas") {
+		return Redirect::to('home');
+	}
+});
+
+Route::filter('perlengkapan',function()
+{
+	if (Auth::user()->role != "Perlengkapan") {
+		return Redirect::to('home');
+	}
+});
+
+Route::filter('penyetuju',function()
+{
+	$role = Auth::user()->role;
+	if ($role != "Perlengkapan" && $role != "Humas" && $role != "Mahalum" ) {
+		return Redirect::to('home');
+	}
+});
+
+
+Route::get('toMahalum/{id}',array('before'=>array('auth','humas'),'uses'=>'PenyetujuManager@toMahalum'));
+Route::get('tolak/{id}',array('before'=>array('auth','penyetuju'),'uses'=>'PenyetujuManager@tolak'));
+Route::get('toPerlengkapan/{id}',array('before'=>array('auth','mahalum'),'uses'=>'PenyetujuManager@toPerlengkapan'));
+Route::get('setujui/{id}',array('before'=>array('auth','perlengkapan'),'uses'=>'PenyetujuManager@setujui'));
+
+
+
+
+
+
+Route::get('/humas',array('before'=>array('auth','humas'),'uses'=>'PenyetujuManager@humas','title'=>'Humas'));
+Route::get('/perlengkapan',array('before'=>array('auth','perlengkapan'),'uses'=>'PenyetujuManager@perlengkapan','title'=>'Perlengkapan'));
+Route::get('/mahalum',array('before'=>array('auth','mahalum'),'uses'=>'PenyetujuManager@mahalum','title'=>'Mahalum'));
+
+
