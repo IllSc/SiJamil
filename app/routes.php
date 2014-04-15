@@ -37,47 +37,70 @@ Route::get('/seed', function()
 	$user->save();
 
 	$ruangan = new Ruangan;
+
+	$ruangan->nomor_ruangan = '3111';
+	$ruangan->kapasitas = '40';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '1';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '3112';
+	$ruangan->kapasitas = '40';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '1';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '3113';
+	$ruangan->kapasitas = '50';
+
 	$ruangan->nomor_ruangan = '2301';
 	$ruangan->kapasitas = '30';
+
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '1';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+
+	$ruangan->nomor_ruangan = '2301';
+	$ruangan->kapasitas = '30';
+
+	$ruangan->nomor_ruangan = '2302';
+	$ruangan->kapasitas = '40';
+
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2302';
-	$ruangan->kapasitas = '40';
+	$ruangan->kapasitas = '30';
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2303';
-	$ruangan->kapasitas = '40';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
-	$ruangan->lantai = '3';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2304';
-	$ruangan->kapasitas = '150';
+	$ruangan->nomor_ruangan = '2303/2304';
+	$ruangan->kapasitas = '70';
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2305';
-	$ruangan->kapasitas = '150';
+	$ruangan->kapasitas = '40';
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2306';
-	$ruangan->kapasitas = '50';
+	$ruangan->kapasitas = '40';
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '3';
 	$ruangan->save();
-
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2401';
@@ -89,36 +112,28 @@ Route::get('/seed', function()
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2402';
-	$ruangan->kapasitas = '150';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
-	$ruangan->lantai = '4';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2403';
-	$ruangan->kapasitas = '150';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
-	$ruangan->lantai = '4';
-	$ruangan->save();
-
-
-	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2404';
 	$ruangan->kapasitas = '40';
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '4';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2403/2404';
+	$ruangan->kapasitas = '70';
+	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->lantai = '4';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2405';
-	$ruangan->kapasitas = '50';
+	$ruangan->kapasitas = '40';
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '4';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2406';
-	$ruangan->kapasitas = '50';
+	$ruangan->kapasitas = '40';
 	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
 	$ruangan->lantai = '4';
 	$ruangan->save();
@@ -194,7 +209,7 @@ Route::get('/home',array('as' =>'home','before' => 'auth',function()
 	} else if($role == "Perlengkapan"){
 		return Redirect::action('PenyetujuManager@perlengkapan');
 	} else {
-		return Redirect::action('RuanganManager@ruanganHome');
+		return View::make('home',array('title' => 'Home'));
 	}
 	
 }))->before('auth');
@@ -264,7 +279,8 @@ Route::get('tolak/{id}',array('before'=>array('auth','penyetuju'),'uses'=>'Penye
 Route::get('toPerlengkapan/{id}',array('before'=>array('auth','mahalum'),'uses'=>'PenyetujuManager@toPerlengkapan'));
 Route::get('setujui/{id}',array('before'=>array('auth','perlengkapan'),'uses'=>'PenyetujuManager@setujui'));
 
-
+//halaman approval civitas
+Route::get('/approval',array('before'=>array('auth'),'uses'=>'RuanganManager@lihatForm'));
 
 
 

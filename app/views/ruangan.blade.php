@@ -17,7 +17,7 @@
 				    	<th>Nama Ruangan</th>
 				    	<th>Lantai</th>
 				    	<th>Kapasitas</th>
-					    <th>Status</th>
+					    <!--<th>Status</th>-->
 					    <th>Pinjam</th>
 					    <th>Lihat Deskripsi Ruangan</th>
 
@@ -29,7 +29,7 @@
 							<td>{{$r->nomor_ruangan}}</td>
 							<td>{{$r->lantai}}</td>
 							<td>{{$r->kapasitas}}</td>
-							<td>Palsu</td>
+							<!--<td>Palsu</td>-->
 							<td>
 								<div class="circular ui icon button">
 									<a href="{{action('RuanganManager@pinjam',$r->id)}}">

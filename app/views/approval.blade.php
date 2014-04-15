@@ -1,44 +1,28 @@
 @extends('layout')
 @section('content')
-<div id="table">
+
+
+	<div id="table">
 			<table class="ui table segment">
 				<thead>
 			    	<tr>
-				    	<th>Name</th>
-				    	<th>Lantai</th>
-				    	<th>Kapasitas</th>
-					    <th>Status</th>
-					    <th>Waktu</th>
-					    <th>Pesan</th>
-
-			  		</tr>
+				    	<th>Ruangan</th>
+				    	<th>Status</th>
+				    </tr>
 				</thead>
 			  	<tbody>
+				@foreach($forms as $f)
 				    <tr>
-				      	<td>John</td>
-				      	<td>Approved</td>
-				      	<td>None</td>
-				      	<td>None</td>
-				      	<td>None</td>
-				      	<td>None</td>
+				      	<td>{{$f->ruangan->nomor_ruangan}}</td>
+						@if($f->status != "Diterima")
+						<td>{{"Menunggu Persetujuan ".$f->status}}</td>
+						@else
+						<td>{{$f->status}}</td>
+						@endif
 				    </tr>
-				    <tr>
-				      	<td>John</td>
-				      	<td>Approved</td>
-				      	<td>None</td>
-				      	<td>None</td>
-				      	<td>None</td>
-				      	<td>None</td>
-				    </tr>
-				    <tr>
-				      	<td>John</td>
-				      	<td>Approved</td>
-				      	<td>None</td>
-				      	<td>None</td>
-				      	<td>None</td>
-				      	<td>None</td>
-				    </tr>
+				@endforeach
 			  	</tbody>
 			</table>
-</div>
+	</div>
+
 @stop

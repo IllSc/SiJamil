@@ -6,21 +6,21 @@ class PenyetujuManager extends \BaseController {
 	{
 		$forms = Isian::where('status','=','Humas')->get();
 		
-		return View::make('humas',compact('forms'));
+		return View::make('humas',compact('forms'),array('title' => 'Home'));
 	}
 
 	public function mahalum()
 	{
 		$forms = Isian::where('status','=','Mahalum')->get();
 
-		return View::make('mahalum',compact('forms'));
+		return View::make('mahalum',compact('forms'),array('title' => 'Home'));
 	}
 
 	public function perlengkapan()
 	{
 		$forms = Isian::where('status','=','Perlengkapan')->get();
 
-		return View::make('perlengkapan',compact('forms'));
+		return View::make('perlengkapan',compact('forms'),array('title' => 'Home'));
 	}
 
 	public function tolak($id)

@@ -11,17 +11,17 @@ class RuanganManager extends \BaseController {
 	{
 		$ruangan = Ruangan::find($id);
 		//$ruangan->title =  'Deskripsi ruangan '.$ruangan->nomor_ruangan;
-		return View::make('deskripsi',compact('ruangan'));
+		return View::make('deskripsi',compact('ruangan'),array('title' => 'Deskripsi Ruangan'));
 	}
 
 	public function pinjam($id)
 	{
-		return View::make('form',array('title'=> 'Form','id'=>$id));
+		return View::make('form',array('title'=> 'Form Peminjaman','id'=>$id));
 	}
 	
 	public function ruanganHome(){
 		$ruangan = Ruangan::all();
-		return View::make('ruangan', compact('ruangan'));
+		return View::make('ruangan', compact('ruangan'),array('title' => 'Daftar Ruangan'));
 	}
 
 	public function simpanPinjaman($idRuangan){
@@ -49,6 +49,7 @@ class RuanganManager extends \BaseController {
 		
 		return Redirect::action('RuanganManager@ruanganHome');
 	}
+	
 	public function filterTanggal($tanggal)
 	{
 		$ruangan = Ruangan::all();
@@ -56,6 +57,15 @@ class RuanganManager extends \BaseController {
 		$ruangan_filter = $form_filter->ruangan()->get();
 		$result = $ruangan->diff($ruangan_filter);
 		return View::make('ruangan', compact('result'));
+	}
+
+	public function lihatForm(){
+		
+		$user = Auth::user();
+		//array form yang berisi semua form yang bersesuaian dengan user yang sedang aktif sekarang
+		$forms = $user->forms;
+		
+		return View::make('approval', compact('forms'),array('title' => 'Status Approval Ruangan'));
 	}
 
 }
