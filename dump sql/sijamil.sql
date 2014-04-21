@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 15, 2014 at 02:15 PM
+-- Generation Time: Apr 21, 2014 at 01:10 PM
 -- Server version: 5.5.34-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.4
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `forms` (
   PRIMARY KEY (`id`),
   KEY `forms_id_peminjam_foreign` (`id_peminjam`),
   KEY `forms_id_ruangan_foreign` (`id_ruangan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `forms`
@@ -54,7 +54,11 @@ INSERT INTO `forms` (`id`, `email`, `tanggal`, `jam_peminjaman`, `keperluan`, `f
 (1, 'garret.kuphal@example.com', '1986-04-05', '14:13:14', 'Perspiciatis voluptatem delectus voluptatem consequatur.', 'Sint molestias optio.', 29, 'disamakan', '2014-04-14 00:31:44', '2014-04-14 00:31:44', 9, 4, '00:00:00', ''),
 (2, 'abelardo18@example.net', '1992-06-30', '02:05:37', 'Eveniet ut hic maiores quibusdam incidunt.', 'Pariatur est.', 59, 'Tolak', '2014-04-14 20:21:33', '2014-04-14 20:30:06', 5, 2, '00:00:00', ''),
 (3, 'joanny.hettinger@example.net', '1974-01-29', '11:48:45', 'Earum voluptates exercitationem autem iure asperiores exercitationem.', 'Explicabo qui dolor.', 59, 'Tolak', '2014-04-14 20:21:33', '2014-04-14 23:12:28', 5, 2, '00:00:00', ''),
-(9, 'ivanmasli@gmail.com', '0000-00-00', '12:12:00', 'Bla2', 'AC', 12, 'Diterima', '2014-04-14 23:08:17', '2014-04-14 23:12:54', 4, 1, '14:12:00', '123456');
+(9, 'ivanmasli@gmail.com', '0000-00-00', '12:12:00', 'Bla2', 'AC', 12, 'Diterima', '2014-04-14 23:08:17', '2014-04-14 23:12:54', 4, 1, '14:12:00', '123456'),
+(10, 'ivanmasli@gmail.com', '0000-00-00', '33:33:00', 'sdnksc', 'AC', 32, 'Mahalum', '2014-04-15 01:19:01', '2014-04-15 01:36:22', 4, 3, '33:33:00', '123456'),
+(11, 'ivanmasli@gmail.com', '0000-00-00', '12:12:00', 'dsdwd', 'AC', 0, 'Humas', '2014-04-15 01:20:09', '2014-04-15 01:20:09', 4, 4, '14:12:00', '323232'),
+(12, 'ivanmasli@gmail.com', '0000-00-00', '12:12:00', 'shdhwid', 'AC', 12, 'Humas', '2014-04-15 01:24:22', '2014-04-15 01:24:22', 4, 12, '14:12:00', '123456'),
+(13, 'ivanmasli@gmail.com', '0000-00-00', '12:12:00', 'kswlkdlwkd', 'AC', 12, 'Humas', '2014-04-16 01:03:19', '2014-04-16 01:03:19', 4, 13, '14:12:00', '123456');
 
 -- --------------------------------------------------------
 
@@ -123,11 +127,11 @@ CREATE TABLE IF NOT EXISTS `ruangan` (
 --
 
 INSERT INTO `ruangan` (`id`, `nomor_ruangan`, `kapasitas`, `fasilitas`, `lantai`, `created_at`, `updated_at`) VALUES
-(1, '3111', 99, 'AC', 2, '2014-04-11 11:48:05', '2014-04-11 11:48:05'),
-(2, '3112', 99, 'AC', 2, '2014-04-11 11:48:06', '2014-04-11 11:48:06'),
-(3, '3113', 99, 'AC', 2, '2014-04-11 11:48:06', '2014-04-11 11:48:06'),
+(1, '3111', 12, 'AC', 7, '2014-04-11 11:48:05', '2014-04-11 11:48:05'),
+(2, '3112', 11, 'AC', 4, '2014-04-11 11:48:06', '2014-04-11 11:48:06'),
+(3, '3113', 7, 'AC', 3, '2014-04-11 11:48:06', '2014-04-11 11:48:06'),
 (4, '3111', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
-(5, '3112', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
+(5, '3112', 15, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
 (6, '3113', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
 (7, '2301', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
 (8, '2302', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
