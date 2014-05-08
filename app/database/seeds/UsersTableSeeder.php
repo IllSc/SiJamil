@@ -13,12 +13,14 @@ class UsersTableSeeder extends Seeder {
 		$user->name = $faker->userName;
 		$user->role = 'Perlengkapan';
 		$user->password = Hash::make('123');
+		$user->string('remember_token', 100)->nullable();
 		$user->save();
 
 		$user = new User;
 		$user->name = $faker->userName;
 		$user->role = 'Mahalum';
 		$user->password = Hash::make('123');
+		$user->string('remember_token', 100)->nullable();
 		$user->save();
 
 
