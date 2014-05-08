@@ -1,11 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
 .center{
 	text-align:center;
 }
-
-@charset "utf-8";
-/* CSS Document */
-
-
 
 a img {
   border: none; }
@@ -24,6 +21,9 @@ h3{
 	font-size: 16px;
 	margin: 12px 0;
 }
+
+/* NEW EXPERIMENT */
+/* Slider Setup */
 
 #slider {
 	text-align: center;
@@ -45,8 +45,6 @@ label, #active, img { -moz-user-select:none;-webkit-user-select:none; }
 	width:340px;
 }
 
-/* NEW EXPERIMENT */
-/* Slider Setup */
 
 #slide1:checked ~ #slides .inner { margin-left:0; }
 #slide2:checked ~ #slides .inner { margin-left:-100%; }
@@ -321,12 +319,3 @@ article img {
 	}
 
 }
-
-/*
-@media only screen and (min-width: 850px) {
-
-	body {
-		padding: 0 80px;
-	}
-}
-*/
