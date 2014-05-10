@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 	<div id="table">
-			<table class="ui table segment">
+			<table class="ui sortable table segment">
 				<thead>
 			    	<tr>
 				    	<th>Ruangan</th>

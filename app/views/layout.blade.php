@@ -7,6 +7,24 @@
 		{{HTML::script('js/jquery-1.11.0.min.js');}}
 		{{HTML::script('js/jquery.tablesort.min.js');}}
 		<title>{{ isset($title) ? $title : 'Sesuatu'}}</title>
+		<script type="text/javascript">
+			$(function() {
+				var table = $('<table></table>');
+				table.append('<thead><tr><th class="number">Number</th></tr></thead>');
+				var tbody = $('<tbody></tbody>');
+				for(var i = 0; i<100; i++) {
+					tbody.append('<tr><td>' + Math.floor(Math.random() * 100) + '</td></tr>');
+				}
+				table.append(tbody);
+				$('.example.ex-2').append(table);
+
+				$('table').tablesort().data('tablesort');
+
+				$('thead th.number').data('sortBy', function(th, td, sorter) {
+					return parseInt(td.text(), 10);
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<!--header menunya-->
