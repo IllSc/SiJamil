@@ -30,6 +30,10 @@ return array(
 	'default' => 'lokalanIbam',
 
 
+	'default' => 'lokalanAgung',
+
+
+
 	/*
 	|--------------------------------------------------------------------------
 	| Database Connections

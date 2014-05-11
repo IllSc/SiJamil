@@ -288,4 +288,11 @@ Route::get('/humas',array('before'=>array('auth','humas'),'uses'=>'PenyetujuMana
 Route::get('/perlengkapan',array('before'=>array('auth','perlengkapan'),'uses'=>'PenyetujuManager@perlengkapan','title'=>'Perlengkapan'));
 Route::get('/mahalum',array('before'=>array('auth','mahalum'),'uses'=>'PenyetujuManager@mahalum','title'=>'Mahalum'));
 
-
+Route::get('/hahaha', function()
+{
+    $html = '<html><body>'
+            . '<p>Put your html here, or generate it with your favourite '
+            . 'templating system.</p>'
+            . '</body></html>';
+    return PDF::load($html, 'A4', 'portrait')->download('my_pdf');
+});
