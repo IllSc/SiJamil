@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<div class="ui segment attached">
 <article id="slider">
 	
 	<!-- Slider Setup -->
@@ -46,4 +47,5 @@
 		<label for="slide5"></label>
 	</div> <!-- #active -->
 </article>	
+</div>
 @stop
