@@ -6,7 +6,8 @@
 	"require": {
 		 "way/generators": "2.*",
 		"laravel/framework": "4.1.*",
-		"fzaninotto/faker": "1.2.*@dev"
+		"fzaninotto/faker": "1.2.*@dev",
+		"thujohn/pdf": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

@@ -8,6 +8,8 @@
 	<title>{{ isset($title) ? $title : 'Sesuatu'}}</title>
 	</head>	
 <body>
+<div style="width: 500px; margin: 200px auto 0 auto;">
+
 	<div class="ui message">
 		<div class="header center">
 	    	Selamat datang di Sijamil
@@ -50,6 +52,7 @@
 		</ul>
 	</div>
 	@endif
+</div>
 </body>
 
 </html>
