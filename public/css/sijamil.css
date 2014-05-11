@@ -4,13 +4,19 @@
 	text-align:center;
 }
 
-<<<<<<< HEAD
-=======
 html,
 body {
    margin:0;
    padding:0;
    height:100%;
+}
+#posisi{
+	position: relative;
+	width: 30%;
+	height: 25%;
+	top: 25%;
+	left:35%;
+	color: #ffffff;
 }
 #container {
    min-height:100%;
@@ -39,7 +45,6 @@ body {
 	padding: 0;
 }
 
->>>>>>> 2d3b2e8284ccff01b36c3f3ac7337c3566c743f6
 a img {
   border: none; }
 article{
