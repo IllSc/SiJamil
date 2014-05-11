@@ -27,6 +27,7 @@
 		</script>
 	</head>
 	<body>
+<<<<<<< HEAD
 		<!--header menunya-->
 			<div id="header">
 				<div class="ui pointing red inverted menu">
@@ -50,6 +51,30 @@
 		<!--foooter starts here -->
 		<div id="footer">
 			<div class="ui bottom attached header">Copyright Sijamil 2014</div>
+=======
+		<div id="container">
+			<div id="header">
+				<div class="ui pointing teal inverted menu">
+					<div class="left menu">
+						<div class="item">Sijamil</div>							
+					</div>
+					<div class="right menu">
+						<a class="item {{ Request::is('home') ? 'active' : '' }}" href="{{ route('home');}}">Home</a>
+						<a class="item {{ Request::is('ruangan') ? 'active' : '' }}" href="{{ route('ruangan');}}">Ruangan</a>
+						<a class="item {{ Request::is('approval') ? 'active' : ''}}" href="{{ route('approval');}}">Approval</a>
+						<a class="item" href="{{ route('logout') }}">Logout</a>
+					</div>
+				</div>
+			</div>
+			<div id="body">
+				@yield('content')
+			</div>
+			<div id="clear"></div>
+			<!--foooter starts here -->
+			<div id="footer">
+				<div class="center teal inverted">Copyright Sijamil 2014</div>
+			</div>
+>>>>>>> 2d3b2e8284ccff01b36c3f3ac7337c3566c743f6
 		</div>
 	</body>
 </html>

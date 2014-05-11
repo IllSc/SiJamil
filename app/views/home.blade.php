@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<<<<<<< HEAD
 <div class="ui segment attached">
 <article id="slider">
 	
@@ -48,4 +49,7 @@
 	</div> <!-- #active -->
 </article>	
 </div>
+=======
+	Selamat Datang Di SIJAMIL COK
+>>>>>>> 2d3b2e8284ccff01b36c3f3ac7337c3566c743f6
 @stop
