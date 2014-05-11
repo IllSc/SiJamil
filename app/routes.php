@@ -282,9 +282,7 @@ Route::get('setujui/{id}',array('before'=>array('auth','perlengkapan'),'uses'=>'
 //halaman approval civitas
 Route::get('/approval',array('before'=>array('auth'),'uses'=>'RuanganManager@lihatForm'));
 
-
-
-
+Route::get('hapusForm/{id}',array('before'=>array('auth'),'uses'=>'RuanganManager@hapusForm'));
 Route::get('/humas',array('before'=>array('auth','humas'),'uses'=>'PenyetujuManager@humas','title'=>'Humas'));
 Route::get('/perlengkapan',array('before'=>array('auth','perlengkapan'),'uses'=>'PenyetujuManager@perlengkapan','title'=>'Perlengkapan'));
 Route::get('/mahalum',array('before'=>array('auth','mahalum'),'uses'=>'PenyetujuManager@mahalum','title'=>'Mahalum'));
