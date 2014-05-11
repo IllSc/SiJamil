@@ -27,7 +27,7 @@ return array(
 	*/
 
 
-	'default' => 'lokalanAgung',
+	'default' => 'lokalanIbam',
 
 	/*
 	|--------------------------------------------------------------------------
