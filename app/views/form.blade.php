@@ -35,4 +35,18 @@
 	</div>
 	{{ Form::submit('Submit',['class'=>'ui blue submit button']) }}
 	{{ Form::close() }}
+	
+	@if($errors->has())
+		<div class="ui error message">
+			<i class="close icon"></i>
+			  <div class="header">
+			    Maaf, sepertinya di masukan anda terdapat kesalahan
+			  </div>
+			<ul class="list">
+			    @foreach($errors->all() as $message)
+			    <li>{{ $message }}</li>
+			    @endforeach
+			</ul>
+		</div>
+		@endif
 @stop
