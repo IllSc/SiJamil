@@ -1,4 +1,6 @@
 @extends('layout')
 @section('content')
-	Selamat Datang Di SIJAMIL COK
+<div id="banner">
+	SELAMAT DATANG DI SIJAMIL
+</div>
 @stop
