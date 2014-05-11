@@ -27,98 +27,19 @@
 							<td>{{$form->jam_selesai}}</td>
 							<td>{{$form->keperluan}}</td>
 			  				<td><div class="circular ui icon button">
-									<a href="{{action('PenyetujuManager@toMahalum',$form->id)}}">
+									<a href="{{action('PenyetujuManager@keteranganPenerimaanHumas',$form->id)}}">
 										<i class="ok circle icon"></i>
 									</a>
 								</div></td>
 							<td><div class="circular ui icon button">
-									<a href="{{action('PenyetujuManager@tolak',$form->id)}}">
+									<a href="{{action('PenyetujuManager@keteranganPenolakan',$form->id)}}">
 										<i class="ok circle icon"></i>
 									</a>
 								</div></td>
 			  			</tr>
 			  		@endforeach
-				    <!-- <tr>
-				      <td>2303</td>
-				      <td>3</td>
-				      <td>3000</td>
-				      <td>buat main dota</td>
-				      <td>24/3/2014 15.00-16.00</td>
-				      <td><input type="radio" name="agree1" value="ok"><br></td>
-				      <td><input type="radio" name="agree1" value="no"><br></td>
-				    </tr>
-				    <tr>
-				      <td>2402</td>
-				      <td>4</td>
-				      <td>1200</td>
-				      <td>buat nonton free to play featuring dendi</td>
-				      <td>25/3/2014 15.00-16.00</td>
-				      <td><input type="radio" name="agree2" value="ok"><br></td>
-				      <td><input type="radio" name="agree2" value="no"><br></td>
-				    </tr>
-				    <tr>
-				      <td>2602</td>
-				      <td>6</td>
-				      <td>50</td>
-				      <td>final TI 5</td>
-				      <td>26/3/2014 15.00-16.00</td>
-				      <td><input type="radio" name="agree3" value="ok"><br></td>
-				      <td><input type="radio" name="agree3" value="no"><br></td>
-				    </tr> -->
 			  	</tbody>
 			</table>
 	</div>
-	<!--test-->
-	<div class="ui small modal">
-			<i class="close icon"></i>
-		  	<div class="header"><i class="empty calendar icon"></i>Tambah Agenda</div>
-
-		  	<div class="content">
-		    	<div class="ui form">
-					<div class="field">
-				    	<label>Nama</label>
-				    	<input type="text" id="namaAgenda"></input>
-				  	</div>
-				  	
-				  	<div class="ui five fields">
-				  		<div class="field">
-				  			<label>Hari</label>
-		    				<div class="ui selection dropdown">
-		  						<span class="text" id ="pilihhari">Senin</span>
-							    <i class="dropdown icon"></i>
-							    <div class="menu">
-							      <span class="item active" data-text="Senin">Senin</span>
-							      <span class="item" data-text="Selasa">Selasa</span>
-							      <span class="item" data-text="Rabu">Rabu</span>
-							      <span class="item" data-text="Kamis">Kamis</span>
-							      <span class="item" data-text="Jumat">Jumat</span>
-							      <span class="item" data-text="Sabtu">Sabtu</span>
-							      <span class="item" data-text="Minggu">Minggu</span>
-							    </div>
-							</div>
-				  		</div>
-				  		<div class="field">
-				  			<label>Jam mulai</label>
-		    				<input id="timefrom" placeholder="Jam mulai" type="text">
-				  		</div>
-				  		<div class="field">
-				  			<label>Jam selesai</label>
-		    				<input id="timeto" placeholder="Jam selesai" type="text">
-				  		</div>
-				  	</div>
-				</div>
-		  	</div>
-
-		  	<div class="actions">
-
-		    <div class="ui black button">Batal</div>
-		    <div class="ui positive right labeled icon button">Tambah<i class="checkmark icon"></i></div>
-		  </div>
-		</div>
-		<script type="text/javascript">
-		$('.ui.small.modal')
-  			.modal('attach events', '.circular ui', 'show')
-		;
-		</script>
 @stop
 

@@ -41,11 +41,10 @@ class RuanganManager extends \BaseController {
 			$form->jam_peminjaman = $input['jam_mulai'];
 			$form->jam_selesai = $input['jam_selesai'];
 			$form->id_ruangan = $idRuangan;
+			$form->visible_by_civitas = 'yes';
 			$user = Auth::user();
 			
-			$form->user()->associate($user);
-
-			
+			$form->user()->associate($user);	
 
 			$form->status = 'Humas';
 			$form->fasilitas = $input['fasilitas'];
@@ -75,6 +74,17 @@ class RuanganManager extends \BaseController {
 		$forms = $user->forms;
 		
 		return View::make('approval', compact('forms'),array('title' => 'Status Approval Ruangan'));
+	}
+	
+	public function hapusForm($id){
+		
+		$user = Auth::user();
+		$form = Isian::find($id);
+		$form->visible_by_civitas = "no";
+		$form->save();
+		$forms = $user->forms;
+		return Redirect::action('RuanganManager@lihatForm');
+		//return View::make('approval', compact('forms'),array('title' => 'Status Approval Ruangan'));
 	}
 
 }

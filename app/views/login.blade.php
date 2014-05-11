@@ -6,6 +6,7 @@
 	{{HTML::script('js/jquery-1.11.0.min.js');}}
 	{{HTML::script('js/jquery.noisy.min.js');}}
 	{{HTML::script('js/sijamil.js');}}
+<<<<<<< HEAD
 	
 	<title>{{ isset($title) ? $title : 'Sesuatu'}}</title>
 	</head>	
@@ -17,6 +18,22 @@
 		  	</div>
 		</div>
 		{{ Form::open(array('url' => 'login','class'=>'ui form segment')) }}
+=======
+	<title>{{ isset($title) ? $title : 'Jamput'}}</title>
+	<style type="text/css">
+	body{
+		background: url(images/login-bg.jpg);
+	}
+	</style>
+	</head>	
+<body>
+	 <div id="posisi">
+		{{ Form::open(array('url' => 'login','class'=>'ui form teal segment inverted')) }}
+		<div class="ui header center">
+	    	Selamat datang di Sijamil
+	  	</div>
+
+>>>>>>> 5382bfdc89856fbf0bf0a273d54dfa1841c5b7dd
 		<div class="field">
 			{{ Form::label('Username') }}
 			<div class="ui left labeled icon input">
@@ -37,10 +54,17 @@
 	      		</div>
 	      	</div>
 		</div>
+<<<<<<< HEAD
 		<div class="header center">
 			{{ Form::submit('Submit',['class'=>'ui blue submit button submit-button', 'onclick'=>'myFunction()']) }}
 			{{ Form::close() }}
 		</div>
+=======
+		<div class="ui header center">
+			{{ Form::submit('Submit',['class'=>'ui red submit button']) }}
+		</div>
+		{{ Form::close() }}
+>>>>>>> 5382bfdc89856fbf0bf0a273d54dfa1841c5b7dd
 		@if($errors->has())
 		<div class="ui error message">
 			<i class="close icon"></i>
