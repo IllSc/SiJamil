@@ -68,5 +68,57 @@
 			  	</tbody>
 			</table>
 	</div>
+	<!--test-->
+	<div class="ui small modal">
+			<i class="close icon"></i>
+		  	<div class="header"><i class="empty calendar icon"></i>Tambah Agenda</div>
+
+		  	<div class="content">
+		    	<div class="ui form">
+					<div class="field">
+				    	<label>Nama</label>
+				    	<input type="text" id="namaAgenda"></input>
+				  	</div>
+				  	
+				  	<div class="ui five fields">
+				  		<div class="field">
+				  			<label>Hari</label>
+		    				<div class="ui selection dropdown">
+		  						<span class="text" id ="pilihhari">Senin</span>
+							    <i class="dropdown icon"></i>
+							    <div class="menu">
+							      <span class="item active" data-text="Senin">Senin</span>
+							      <span class="item" data-text="Selasa">Selasa</span>
+							      <span class="item" data-text="Rabu">Rabu</span>
+							      <span class="item" data-text="Kamis">Kamis</span>
+							      <span class="item" data-text="Jumat">Jumat</span>
+							      <span class="item" data-text="Sabtu">Sabtu</span>
+							      <span class="item" data-text="Minggu">Minggu</span>
+							    </div>
+							</div>
+				  		</div>
+				  		<div class="field">
+				  			<label>Jam mulai</label>
+		    				<input id="timefrom" placeholder="Jam mulai" type="text">
+				  		</div>
+				  		<div class="field">
+				  			<label>Jam selesai</label>
+		    				<input id="timeto" placeholder="Jam selesai" type="text">
+				  		</div>
+				  	</div>
+				</div>
+		  	</div>
+
+		  	<div class="actions">
+
+		    <div class="ui black button">Batal</div>
+		    <div class="ui positive right labeled icon button">Tambah<i class="checkmark icon"></i></div>
+		  </div>
+		</div>
+		<script type="text/javascript">
+		$('.ui.small.modal')
+  			.modal('attach events', '.circular ui', 'show')
+		;
+		</script>
 @stop
 

@@ -18,6 +18,10 @@ body {
 	left:35%;
 	color: #ffffff;
 }
+#posisi_submit{
+	width: 30%;
+	background-color: yellow;
+}
 #container {
    min-height:100%;
    position:relative;
