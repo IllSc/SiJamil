@@ -6,6 +6,11 @@
 	{{HTML::script('js/jquery-1.11.0.min.js');}}
 	{{HTML::script('js/sijamil.js');}}
 	<title>{{ isset($title) ? $title : 'Sesuatu'}}</title>
+	<style type="text/css">
+	body{
+		background-image: /public/
+	}
+	</style>
 	</head>	
 <body>
 	 <div id="posisi">

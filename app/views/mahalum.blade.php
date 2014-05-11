@@ -27,7 +27,7 @@
 							<td>{{$form->jam_selesai}}</td>
 							<td>{{$form->keperluan}}</td>
 			  				<td><div class="circular ui icon button">
-									<a href="{{action('PenyetujuManager@toPerlengkapan',$form->id)}}">
+									<a href="{{action('PenyetujuManager@keteranganPenerimaanMahalum',$form->id)}}">
 										<i class="ok circle icon"></i>
 									</a>
 								</div></td>

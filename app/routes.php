@@ -276,7 +276,13 @@ Route::filter('penyetuju',function()
 
 Route::get('toMahalum/{id}',array('before'=>array('auth','humas'),'uses'=>'PenyetujuManager@toMahalum'));
 Route::post('/tolak/{id}','PenyetujuManager@tolak')->before('auth');
+Route::post('/toMahalum/{id}','PenyetujuManager@toMahalum')->before('auth');
+Route::post('/toPerlengkapan/{id}','PenyetujuManager@toPerlengkapan')->before('auth');
+Route::post('/setujui/{id}','PenyetujuManager@setujui')->before('auth');
 Route::get('keteranganPenolakan/{id}',array('before'=>array('auth','penyetuju'),'uses'=>'PenyetujuManager@keteranganPenolakan'));
+Route::get('keteranganPenerimaanHumas/{id}',array('before'=>array('auth','penyetuju'),'uses'=>'PenyetujuManager@keteranganPenerimaanHumas'));
+Route::get('keteranganPenerimaanMahalum/{id}',array('before'=>array('auth','penyetuju'),'uses'=>'PenyetujuManager@keteranganPenerimaanMahalum'));
+Route::get('keteranganPenerimaanPerlengkapan/{id}',array('before'=>array('auth','penyetuju'),'uses'=>'PenyetujuManager@keteranganPenerimaanPerlengkapan'));
 Route::get('toPerlengkapan/{id}',array('before'=>array('auth','mahalum'),'uses'=>'PenyetujuManager@toPerlengkapan'));
 Route::get('setujui/{id}',array('before'=>array('auth','perlengkapan'),'uses'=>'PenyetujuManager@setujui'));
 
