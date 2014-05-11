@@ -33,6 +33,6 @@
 	{{ Form::label('Keperluan') }}
 		{{ Form::textarea('keperluan',null,['class'=>'ui input', 'placeholder'=>'Keperluan','required' => 'required']) }}
 	</div>
-	{{ Form::submit('Submit',['class'=>'ui blue submit button']) }}
+	{{ Form::submit('Submit',['class'=>'ui red submit button']) }}
 	{{ Form::close() }}
 @stop
