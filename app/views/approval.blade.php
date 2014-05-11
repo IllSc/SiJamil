@@ -22,7 +22,7 @@
 						@else
 						<td>{{$f->status}}</td>
 						@endif
-						<td>test</td>
+						<td>{{$f->keterangan_tolak}}</td>
 						<td>
 							<div class="circular ui icon button">
 								<a href="{{action('RuanganManager@hapusForm',$f->id)}}">
