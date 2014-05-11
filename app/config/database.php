@@ -26,8 +26,13 @@ return array(
 	|
 	*/
 
+	'default' => 'lokalanGede',
+	'default' => 'lokalanIbam',
+
 
 	'default' => 'lokalanIbam',
+
+
 
 	/*
 	|--------------------------------------------------------------------------

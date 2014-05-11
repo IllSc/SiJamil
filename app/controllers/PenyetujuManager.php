@@ -23,12 +23,17 @@ class PenyetujuManager extends \BaseController {
 		return View::make('perlengkapan',compact('forms'),array('title' => 'Home'));
 	}
 
-	public function tolak($id)
+	public function keteranganPenolakan($id)
 	{
-		
+		return View::make('tolak',array('title'=> 'Keterangan Penolakan','id'=>$id));
+	}
+	
+	public function tolak($id){
+		$input = Input::all();
 		$peran = Auth::user()->role;
 		$form = Isian::find($id);
 		$form->status = "Tolak";
+		$form->keterangan_tolak = $input['keterangan'];
 		$form->save();
 		if($peran == "Humas"){
 			return Redirect::action('PenyetujuManager@humas');
@@ -38,8 +43,8 @@ class PenyetujuManager extends \BaseController {
 		else if($peran == "Perlengkapan"){
 			return Redirect::action('PenyetujuManager@perlengkapan');
 		}
-		
 	}
+	
 	public function toMahalum($id)
 	{
 		$form = Isian::find($id);
