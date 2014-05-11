@@ -26,16 +26,8 @@ return array(
 	|
 	*/
 
-	'default' => 'lokalanGede',
-<<<<<<< HEAD
 	'default' => 'lokalanIbam',
 
-
-	'default' => 'lokalanIbam',
-
-
-=======
->>>>>>> b21cecc9a33e0e6c4284dda8fc3d45ab64cee2f1
 
 	/*
 	|--------------------------------------------------------------------------

@@ -5,21 +5,20 @@
 	{{HTML::script('js/semantic.min.js');}}
 	{{HTML::script('js/jquery-1.11.0.min.js');}}
 	{{HTML::script('js/sijamil.js');}}
-	<title>{{ isset($title) ? $title : 'Sesuatu'}}</title>
+	<title>{{ isset($title) ? $title : 'Jamput'}}</title>
 	<style type="text/css">
 	body{
-		background-image: /public/
+		background: url(images/login-bg.jpg);
 	}
 	</style>
 	</head>	
 <body>
 	 <div id="posisi">
-		<div class="ui blue message">
-			<div class="header center">
-		    	Selamat datang di Sijamil
-		  	</div>
-		</div>
-		{{ Form::open(array('url' => 'login','class'=>'ui form segment')) }}
+		{{ Form::open(array('url' => 'login','class'=>'ui form teal segment inverted')) }}
+		<div class="ui header center">
+	    	Selamat datang di Sijamil
+	  	</div>
+
 		<div class="field">
 			{{ Form::label('Username') }}
 			<div class="ui left labeled icon input">
@@ -40,7 +39,9 @@
 	      		</div>
 	      	</div>
 		</div>
-		{{ Form::submit('Submit',['class'=>'ui blue submit button submit-button', 'onclick'=>'myFunction()']) }}
+		<div class="ui header center">
+			{{ Form::submit('Submit',['class'=>'ui red submit button']) }}
+		</div>
 		{{ Form::close() }}
 		@if($errors->has())
 		<div class="ui error message">
