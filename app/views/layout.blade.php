@@ -33,14 +33,13 @@
 				<div class="container">
 					<div class="logo">
 						<div class="left menu">
-							<div class="item">Sijamil</div>
+							<div class="item">Sijamil</div>							
 						</div>
-					</div>
-					<div class="ui red inverted right menu">
 						<a class="item {{ Request::is('home') ? 'active' : '' }}" href="{{ route('home');}}">Home</a>
 						<a class="item {{ Request::is('ruangan') ? 'active' : '' }}" href="{{ route('ruangan');}}">Ruangan</a>
 						<a class="item {{ Request::is('approval') ? 'active' : ''}}" href="{{ route('approval');}}">Approval</a>
 						<a class="item" href="{{ route('logout') }}">Logout</a>
+
 					</div>
 				</div>
 			</div>
