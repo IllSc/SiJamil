@@ -48,7 +48,7 @@
 			<div id="clear"></div>
 			<!--foooter starts here -->
 			<div id="footer">
-				<div class="center teal inverted">Copyright Sijamil 2014</div>
+				<div class="center teal inverted">Developed by KB-08 PPL 2014 &copy Sijamil 2014</div>
 			</div>
 		</div>
 	</body>
