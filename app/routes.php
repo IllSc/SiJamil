@@ -13,150 +13,104 @@
 use Faker\Factory as Faker;
 
 
-Route::get('/seed', function()
+Route::get('/seed/ruangan', function()
 {
-	// return Redirect::route('home');
-	$user = new User;
-	$user->name = 'Ivan';
-	$user->password = '123';
-	$user->role = 'Civitas';
-	$user->save();
-
-	// return Redirect::route('home');
-	$user = new User;
-	$user->name = 'Ivan2';
-	$user->password = '123';
-	$user->role = 'Civitas';
-	$user->save();
-
-	// return Redirect::route('home');
-	$user = new User;
-	$user->name = 'Ivan3';
-	$user->password = '123';
-	$user->role = 'Civitas';
-	$user->save();
-
 	$ruangan = new Ruangan;
-
-	$ruangan->nomor_ruangan = '3111';
-	$ruangan->kapasitas = '40';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
-	$ruangan->lantai = '1';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '3112';
-	$ruangan->kapasitas = '40';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
-	$ruangan->lantai = '1';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '3113';
-	$ruangan->kapasitas = '50';
-
 	$ruangan->nomor_ruangan = '2301';
-	$ruangan->kapasitas = '30';
-
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
-	$ruangan->lantai = '1';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
-
-	$ruangan->nomor_ruangan = '2301';
-	$ruangan->kapasitas = '30';
-
-	$ruangan->nomor_ruangan = '2302';
-	$ruangan->kapasitas = '40';
-
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->kapasitas = '65';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2302';
-	$ruangan->kapasitas = '30';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->kapasitas = '67';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2303/2304';
-	$ruangan->kapasitas = '70';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->nomor_ruangan = '2303';
+	$ruangan->kapasitas = '67';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2305';
-	$ruangan->kapasitas = '40';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->nomor_ruangan = '2304-2305';
+	$ruangan->kapasitas = '100';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2306';
-	$ruangan->kapasitas = '40';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->kapasitas = '70';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
+	$ruangan->lantai = '3';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2307';
+	$ruangan->kapasitas = '70';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '3';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2401';
-	$ruangan->kapasitas = '30';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->kapasitas = '53';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '4';
 	$ruangan->save();
 
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = '2402-2403';
+	$ruangan->kapasitas = '120';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
+	$ruangan->lantai = '4';
+	$ruangan->save();
 
 	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2402';
+	$ruangan->nomor_ruangan = '2404';
 	$ruangan->kapasitas = '40';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
-	$ruangan->lantai = '4';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2403/2404';
-	$ruangan->kapasitas = '70';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '4';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2405';
-	$ruangan->kapasitas = '40';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
-	$ruangan->lantai = '4';
-	$ruangan->save();
-
-	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2406';
-	$ruangan->kapasitas = '40';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->kapasitas = '70';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '4';
 	$ruangan->save();
 
 	$ruangan = new Ruangan;
 	$ruangan->nomor_ruangan = '2502';
-	$ruangan->kapasitas = '60';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->kapasitas = '53';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '5';
 	$ruangan->save();
 	
 	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2601';
-	$ruangan->kapasitas = '30';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->nomor_ruangan = '2602';
+	$ruangan->kapasitas = '52';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '6';
 	$ruangan->save();
 	
 	$ruangan = new Ruangan;
-	$ruangan->nomor_ruangan = '2602';
-	$ruangan->kapasitas = '75';
-	$ruangan->fasilitas = 'AC, kursi , proyektor, speaker, komputer';
+	$ruangan->nomor_ruangan = '2603';
+	$ruangan->kapasitas = '70';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
 	$ruangan->lantai = '6';
+	$ruangan->save();
+
+	$ruangan = new Ruangan;
+	$ruangan->nomor_ruangan = 'Aula';
+	$ruangan->kapasitas = '180';
+	$ruangan->fasilitas = 'AC, Layar, Infocus, White Board';
+	$ruangan->lantai = '1';
 	$ruangan->save();
 
 
