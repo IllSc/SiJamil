@@ -175,6 +175,11 @@ Route::get('/ruangan',array('as'=>'ruangan',function()
 	return View::make('ruangan',array('title' => 'Ruangan'));
 }))->before('auth');
 
+Route::get('/history',array('as'=>'history',function()
+{
+	return Redirect::action('PenyetujuManager@history');
+}))->before('auth');
+
 Route::get('/humas',array('as'=>'humas',function()
 {
 	return View::make('humas',array('title' => 'Humas'));
@@ -249,6 +254,7 @@ Route::get('hapusForm/{id}',array('before'=>array('auth'),'uses'=>'RuanganManage
 Route::get('/humas',array('before'=>array('auth','humas'),'uses'=>'PenyetujuManager@humas','title'=>'Humas'));
 Route::get('/perlengkapan',array('before'=>array('auth','perlengkapan'),'uses'=>'PenyetujuManager@perlengkapan','title'=>'Perlengkapan'));
 Route::get('/mahalum',array('before'=>array('auth','mahalum'),'uses'=>'PenyetujuManager@mahalum','title'=>'Mahalum'));
+Route::get('/history',array('before'=>array('auth','history'),'uses'=>'PenyetujuManager@history','title'=>'Mahalum'));
 
 Route::get('/pdf',function()
 {	

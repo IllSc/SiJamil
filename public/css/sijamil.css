@@ -1,20 +1,23 @@
 @charset "utf-8";
 /* Home Page */
 #banner{
-	background: url(../images/bg-home.png) center center no-repeat #00a8b3;
+	background: url(../images/home-bg.jpg) center center no-repeat #00a8b3;
 	background-size: cover;
-	height: 325px;
+	height: 450px;
 }
 #banner2{
-	background: #222;
+	background: #00B5AD;
 	background-size: cover;
 	height: 250px;
 }
 .title{
+	position: relative;
+	margin-top: 10%;
 	font-size: 85px;
 	color: #fff;
 }
 .subtitle{
+	position: relative;
 	font-size: 36px;
 	color: #fff;
 }

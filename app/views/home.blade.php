@@ -10,7 +10,7 @@
 	<div class="ui three column grid">
 		<div class="column">
 			<div class="center">
-				<i class="huge inverted question icon"></i>
+				<i class="huge teal inverted question icon"></i>
 			</div>
 			<p class="ui header inverted center">Apa Itu Sijamil?</p>
 			<p class="ui penjelasan center">Sijamil adalah sebuah Sistem Peminjaman Ruangan Fasilkom yang terdigitalisasi.
@@ -18,7 +18,7 @@
 		</div>
 		<div class="column">
 			<div class="center">
-				<i class="huge inverted users icon"></i>
+				<i class="huge teal inverted users icon"></i>
 			</div>
 			<p class="ui header inverted center">Kenapa Menggunakan Sijamil?</p>
 			<p class="ui penjelasan center">Dalam rangka menjadikan Fasilkom sebagai pusat unggulan di bidang Ilmu Komputer
@@ -26,12 +26,13 @@
 		</div>
 		<div class="column">
 			<div class="center">
-				<i class="huge inverted briefcase icon"></i>
+				<i class="huge teal inverted briefcase icon"></i>
 			</div>
 			<p class="ui header inverted center">Bagaimana Menggunakan Sijamil?</p>
 			<p class="ui penjelasan center">Klik menu Ruangan dan mulai meminjam ruangan yang ingin digunakan.
 				Informasi lebih lanjut dapat dilihat di halaman <a href="">FAQ</a></p>
 		</div>
+	</br>
 	</div>
 </div>
 @stop

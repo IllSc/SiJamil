@@ -23,6 +23,13 @@ class PenyetujuManager extends \BaseController {
 		return View::make('perlengkapan',compact('forms'),array('title' => 'Home'));
 	}
 
+	public function history()
+	{
+		$forms = Isian::where('id','>','0')->get();
+
+		return View::make('history',compact('forms'),array('title' => 'History'));
+	}
+
 	public function keteranganPenolakan($id)
 	{
 		return View::make('tolak',array('title'=> 'Keterangan Penolakan','id'=>$id));
@@ -83,29 +90,31 @@ class PenyetujuManager extends \BaseController {
 		$form->ket_perlengkapan = $input['keterangan'];
 		$form->save();
 
-			define('BUDGETS_DIR', public_path('uploads/budgets')); // I define this in a constants.php file
-			if (!is_dir(BUDGETS_DIR)){
-			    mkdir(BUDGETS_DIR, 0755, true);
-			}
+		define('BUDGETS_DIR', public_path('uploads/budgets')); // I define this in a constants.php file
+		if (!is_dir(BUDGETS_DIR))
+		{
+		    mkdir(BUDGETS_DIR, 0755, true);
+		}
 
-			$html = '<html><body>'
-		            . '<p>Put your html here, or generate it with your favourite '
-		            . 'templating system.</p>'
-		            . '</body></html>';
+		$html = '<html><body>'
+	            . '<p>Put your html here, or generate it with your favourite '
+	            . 'templating system.</p>'
+	            . '</body></html>';
 
-			$outputName = str_random(10); // str_random is a [Laravel helper](http://laravel.com/docs/helpers#strings)
-			$pdfPath = BUDGETS_DIR.'/'.$outputName.'.pdf';
-			File::put($pdfPath, PDF::load($html, 'A4', 'portrait')->output());
+		$outputName = str_random(10); // str_random is a [Laravel helper](http://laravel.com/docs/helpers#strings)
+		$pdfPath = BUDGETS_DIR.'/'.$outputName.'.pdf';
+		File::put($pdfPath, PDF::load($html, 'A4', 'portrait')->output());
 
-			$data =array();
-			Mail::send('template.blank', $data, function($message) use ($pdfPath){
-			    $message->from('pplkb08@gmail.com', 'Laravel');
-			    $message->to('ibrahimker@gmail.com');
-			    $message->attach($pdfPath);
-			});
+		$data =array();
+		Mail::send('template.blank', $data, function($message) use ($pdfPath)
+		{
+		    $message->from('pplkb08@gmail.com', 'Laravel');
+		    $message->to('ibrahimker@gmail.com');
+		    $message->attach($pdfPath);
+		});
 
-				return Redirect::action('PenyetujuManager@perlengkapan');
-			}
+		return Redirect::action('PenyetujuManager@perlengkapan');
+	}
 
 
 

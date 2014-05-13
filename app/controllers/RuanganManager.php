@@ -94,6 +94,15 @@ class RuanganManager extends \BaseController {
 		
 		return View::make('approval', compact('forms'),array('title' => 'Status Approval Ruangan'));
 	}
+
+	public function lihatHistory(){
+		
+		$user = Auth::user();
+		//array form yang berisi semua form yang bersesuaian dengan user yang sedang aktif sekarang
+		$forms = $user->forms;
+		
+		return View::make('approval', compact('forms'),array('title' => 'Status Approval Ruangan'));
+	}
 	
 	public function hapusForm($id){
 		
