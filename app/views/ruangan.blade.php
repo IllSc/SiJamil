@@ -1,20 +1,7 @@
 @extends('layout')
 @section('content')
-
-<!-- filter starts here -->
-		<div class="ui form segment">
-			<input type="date" name="bday">
-		</div>
-		@foreach ($errors as $error)
-			<?php print_r($error) ?>
-		@endforeach
-
-	{{$errors}}
-		@foreach ($errors as $error)
-			{{ $error}}
-		@endforeach
-
-		<?php echo $errors->first('email'); ?>
+<div id="content">
+	<!-- filter starts here -->
 		@if($ruangan->isEmpty())
 		<p>tidak ada ruangan pada database</p>
 		@else
@@ -26,10 +13,8 @@
 				    	<th>Nama Ruangan</th>
 				    	<th>Lantai</th>
 				    	<th>Kapasitas</th>
-					    <!--<th>Status</th>-->
 					    <th>Pinjam</th>
 					    <th>Lihat Deskripsi Ruangan</th>
-
 			  		</tr>
 				</thead>
 			  	<tbody>
@@ -38,7 +23,6 @@
 							<td>{{$r->nomor_ruangan}}</td>
 							<td>{{$r->lantai}}</td>
 							<td>{{$r->kapasitas}}</td>
-							<!--<td>Palsu</td>-->
 							<td>
 								<div class="circular ui icon button">
 									<a href="{{action('RuanganManager@pinjam',$r->id)}}">
@@ -58,6 +42,6 @@
 			</table>
 		
 		</div>
-
-		@endif
+	@endif
+</div>
 @stop

@@ -22,8 +22,20 @@ class LoginLogoutManager extends \BaseController {
 
 	public function logout()
 	{
-		Auth::logout(); // log the user out of our application
-		return Redirect::to('login'); // redirect the user to the login screen
+		// Auth::logout(); // log the user out of our application
+		// return Redirect::to('login'); // redirect the user to the login screen
+
+		if(Auth::guest() === false)
+    	{
+    		// redirect jika berhasil logout ke url xxx
+    		$arr = array('url'=>'http://localhost/sijamil/public/');
+        	return Cas::logout($arr);
+
+    	}
+    	else
+    	{
+        	return Redirect::to('/');
+    	}
 	}
 
 	public function login()
@@ -50,15 +62,11 @@ class LoginLogoutManager extends \BaseController {
 				'name' 	=> Input::get('username'),
 				'password' 	=> Input::get('password')
 			);
-			// $ab = Hash::make('123');
-			// print_r ($ab);
+
 			// attempt to do the login
 			if (Auth::attempt($userdata)) {
-
 				// validation successful!
 				// redirect them to the secure section or whatever
-				// return Redirect::to('secure');
-				// for now we'll just echo success (even though echoing in a controller is bad)
 				$role = Auth::user()->role;
 				if($role == "Humas"){
 					return Redirect::action('PenyetujuManager@humas');
@@ -71,10 +79,9 @@ class LoginLogoutManager extends \BaseController {
 				}
 
 			} else {	 	
-
 				// validation not successful, send back to form	
-				return Redirect::to('login');
-
+				return Redirect::to('login')
+					->withErrors('Username/password anda salah');
 			}
 
 		}

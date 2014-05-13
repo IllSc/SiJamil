@@ -107,7 +107,9 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+		'Thujohn\Pdf\PdfServiceProvider',
+		'Teuz\LaravelCas\LaravelCasServiceProvider',
+		'\anlutro\cURL\Laravel\cURLServiceProvider',
 	),
 
 	/*
@@ -173,6 +175,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+	    'PDF'			  => 'Thujohn\Pdf\PdfFacade',
+	    'Cas' 			  => 'Teuz\LaravelCas\Facades\Cas'
 
 	),
 

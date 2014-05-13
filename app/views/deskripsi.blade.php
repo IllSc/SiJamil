@@ -7,8 +7,7 @@
 	    	<tr>
 		    	<th>Name</th>
 		    	<th>Lantai</th>
-		    	<th>Kapasitas</th>
-			    
+		    	<th>Kapasitas</th>	    
 			    <th>Fasilitas</th>
 	  		</tr>
 		</thead>

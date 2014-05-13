@@ -33,21 +33,21 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
+Route::filter('cas', function()
 {
-	if (Auth::guest()) return Redirect::guest('login');
+    if (Auth::guest())
+    {
+        return Cas::login();  
+    }
 });
 
-// Route::filter('auth2', function()
-// {
-// 	if (Auth::guest()){
-// 		return Redirect::guest('login');
-// 	} else if(Auth::user()->role == "Humas") {
-// 		//
-// 	}
-// });
-
-
+Route::filter('auth', function()
+{
+	if (Auth::guest())
+	{
+		return Redirect::guest('cas');
+	}
+});
 
 Route::filter('auth.basic', function()
 {

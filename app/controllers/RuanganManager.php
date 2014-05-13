@@ -26,13 +26,32 @@ class RuanganManager extends \BaseController {
 
 	public function simpanPinjaman($idRuangan){
 		$input = Input::all();
-		
+		$ruangan = Isian::where('id_ruangan','=',$idRuangan)->get();
 		$rules = array('email'=>array('required','email'),'handphone'=>array('required','numeric'),'tanggal'=>array('required','date'),'jam_mulai'=>'required','jam_selesai'=>'required');
 		$validator = Validator::make(Input::all(), $rules);
 
 		if ($validator->fails()){
 			return Redirect::to('ruangan')->withErrors($validator);
 		} else {
+			foreach($ruangan as $r){
+				//misal di database : 10.00 - 11.00, yang minjem jam 09.00 - 10.30
+				if($r['tanggal'] == $input['tanggal'] && $r['jam_peminjaman'] >= $input['jam_mulai'] && $r['jam_selesai'] >= $input['jam_selesai']){
+					return View::make('form',array('title'=> 'Form Peminjaman','id'=>$idRuangan))->withErrors("Ruangan tersebut sudah dipinjam pada tanggal  ".$r['tanggal']." dan pada jam ".$r['jam_peminjaman']." sampai ".$r['jam_selesai']);
+				}
+				//misal di database : 10.00 - 11.00, yang minjem jam 10.30 - 11.30
+				else if($r['tanggal'] == $input['tanggal'] && $r['jam_peminjaman'] <= $input['jam_mulai'] && $r['jam_selesai'] <= $input['jam_selesai']){
+					return View::make('form',array('title'=> 'Form Peminjaman','id'=>$idRuangan))->withErrors("Ruangan tersebut sudah dipinjam pada tanggal  ".$r['tanggal']." dan pada jam ".$r['jam_peminjaman']." sampai ".$r['jam_selesai']);
+				}
+				//misal di database : 10.00 - 11.00, yang minjem jam 09.00 - 11.30
+				else if($r['tanggal'] == $input['tanggal'] && $r['jam_peminjaman'] >= $input['jam_mulai'] && $r['jam_selesai'] <= $input['jam_selesai']){
+					return View::make('form',array('title'=> 'Form Peminjaman','id'=>$idRuangan))->withErrors("Ruangan tersebut sudah dipinjam pada tanggal  ".$r['tanggal']." dan pada jam ".$r['jam_peminjaman']." sampai ".$r['jam_selesai']);
+				}
+				//misal di database : 10.00 - 11.00, yang minjem jam 10.20 - 10.30
+				else if($r['tanggal'] == $input['tanggal'] && $r['jam_peminjaman'] <= $input['jam_mulai'] && $r['jam_selesai'] >= $input['jam_selesai']){
+					return View::make('form',array('title'=> 'Form Peminjaman','id'=>$idRuangan))->withErrors("Ruangan tersebut sudah dipinjam pada tanggal  ".$r['tanggal']." dan pada jam ".$r['jam_peminjaman']." sampai ".$r['jam_selesai']);
+				}
+
+			}
 			$form = New Isian;
 			$form->email = $input['email'];
 			$form->nomor_telepon = $input['handphone'];
@@ -41,11 +60,10 @@ class RuanganManager extends \BaseController {
 			$form->jam_peminjaman = $input['jam_mulai'];
 			$form->jam_selesai = $input['jam_selesai'];
 			$form->id_ruangan = $idRuangan;
+			$form->visible_by_civitas = 'yes';
 			$user = Auth::user();
 			
-			$form->user()->associate($user);
-
-			
+			$form->user()->associate($user);	
 
 			$form->status = 'Humas';
 			$form->fasilitas = $input['fasilitas'];
@@ -75,6 +93,17 @@ class RuanganManager extends \BaseController {
 		$forms = $user->forms;
 		
 		return View::make('approval', compact('forms'),array('title' => 'Status Approval Ruangan'));
+	}
+	
+	public function hapusForm($id){
+		
+		$user = Auth::user();
+		$form = Isian::find($id);
+		$form->visible_by_civitas = "no";
+		$form->save();
+		$forms = $user->forms;
+		return Redirect::action('RuanganManager@lihatForm');
+		//return View::make('approval', compact('forms'),array('title' => 'Status Approval Ruangan'));
 	}
 
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2014 at 09:00 AM
+-- Generation Time: May 13, 2014 at 06:41 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -35,31 +35,21 @@ CREATE TABLE IF NOT EXISTS `forms` (
   `fasilitas` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `jumlah_peserta` int(11) NOT NULL,
   `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ket_mahalum` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ket_humas` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ket_perlengkapan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ket_tolak` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `id_peminjam` int(10) unsigned NOT NULL,
   `id_ruangan` int(10) unsigned NOT NULL,
   `jam_selesai` time NOT NULL,
   `nomor_telepon` text COLLATE utf8_unicode_ci NOT NULL,
+  `visible_by_civitas` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `forms_id_peminjam_foreign` (`id_peminjam`),
   KEY `forms_id_ruangan_foreign` (`id_ruangan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
-
---
--- Dumping data for table `forms`
---
-
-INSERT INTO `forms` (`id`, `email`, `tanggal`, `jam_peminjaman`, `keperluan`, `fasilitas`, `jumlah_peserta`, `status`, `created_at`, `updated_at`, `id_peminjam`, `id_ruangan`, `jam_selesai`, `nomor_telepon`) VALUES
-(1, 'garret.kuphal@example.com', '1986-04-05', '14:13:14', 'Perspiciatis voluptatem delectus voluptatem consequatur.', 'Sint molestias optio.', 29, 'disamakan', '2014-04-14 00:31:44', '2014-04-14 00:31:44', 9, 4, '00:00:00', ''),
-(2, 'abelardo18@example.net', '1992-06-30', '02:05:37', 'Eveniet ut hic maiores quibusdam incidunt.', 'Pariatur est.', 59, 'Tolak', '2014-04-14 20:21:33', '2014-04-14 20:30:06', 5, 2, '00:00:00', ''),
-(3, 'joanny.hettinger@example.net', '1974-01-29', '11:48:45', 'Earum voluptates exercitationem autem iure asperiores exercitationem.', 'Explicabo qui dolor.', 59, 'Tolak', '2014-04-14 20:21:33', '2014-04-14 23:12:28', 5, 2, '00:00:00', ''),
-(9, 'ivanmasli@gmail.com', '0000-00-00', '12:12:00', 'Bla2', 'AC', 12, 'Diterima', '2014-04-14 23:08:17', '2014-04-14 23:12:54', 4, 1, '14:12:00', '123456'),
-(10, 'ivanmasli@gmail.com', '0000-00-00', '33:33:00', 'sdnksc', 'AC', 32, 'Diterima', '2014-04-15 01:19:01', '2014-05-06 22:52:44', 4, 3, '33:33:00', '123456'),
-(11, 'ivanmasli@gmail.com', '0000-00-00', '12:12:00', 'dsdwd', 'AC', 0, 'Mahalum', '2014-04-15 01:20:09', '2014-05-07 01:04:07', 4, 4, '14:12:00', '323232'),
-(12, 'ivanmasli@gmail.com', '0000-00-00', '12:12:00', 'shdhwid', 'AC', 12, 'Tolak', '2014-04-15 01:24:22', '2014-05-07 01:04:38', 4, 12, '14:12:00', '123456'),
-(13, 'ivanmasli@gmail.com', '0000-00-00', '12:12:00', 'kswlkdlwkd', 'AC', 12, 'Tolak', '2014-04-16 01:03:19', '2014-05-07 01:15:44', 4, 13, '14:12:00', '123456'),
-(14, '123123@askdsd.coasd', '0000-00-00', '12:00:00', '2323', 'haha', 0, 'Humas', '2014-05-07 01:03:41', '2014-05-07 01:03:41', 4, 1, '10:02:00', '213213');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -122,32 +112,27 @@ CREATE TABLE IF NOT EXISTS `ruangan` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=34 ;
 
 --
 -- Dumping data for table `ruangan`
 --
 
 INSERT INTO `ruangan` (`id`, `nomor_ruangan`, `kapasitas`, `fasilitas`, `lantai`, `created_at`, `updated_at`) VALUES
-(1, '3111', 12, 'AC', 7, '2014-04-11 11:48:05', '2014-04-11 11:48:05'),
-(2, '3112', 11, 'AC', 4, '2014-04-11 11:48:06', '2014-04-11 11:48:06'),
-(3, '3113', 7, 'AC', 3, '2014-04-11 11:48:06', '2014-04-11 11:48:06'),
-(4, '3111', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
-(5, '3112', 15, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
-(6, '3113', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
-(7, '2301', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
-(8, '2302', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
-(9, '2303', 99, 'AC', 2, '2014-04-14 00:10:57', '2014-04-14 00:10:57'),
-(10, '2304', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58'),
-(11, '2305', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58'),
-(12, '2306', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58'),
-(13, '2401', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58'),
-(14, '2402', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58'),
-(15, '2403', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58'),
-(16, '2404', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58'),
-(17, '2405', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58'),
-(18, '2406', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58'),
-(19, '2502', 99, 'AC', 2, '2014-04-14 00:10:58', '2014-04-14 00:10:58');
+(20, '2301', 65, 'AC, Layar, Infocus, White Board', 3, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(21, '2302', 67, 'AC, Layar, Infocus, White Board', 3, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(22, '2303', 67, 'AC, Layar, Infocus, White Board', 3, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(23, '2304-2305', 100, 'AC, Layar, Infocus, White Board', 3, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(24, '2306', 70, 'AC, Layar, Infocus, White Board', 3, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(25, '2307', 70, 'AC, Layar, Infocus, White Board', 3, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(26, '2401', 53, 'AC, Layar, Infocus, White Board', 4, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(27, '2402-2403', 120, 'AC, Layar, Infocus, White Board', 4, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(28, '2404', 40, 'AC, Layar, Infocus, White Board', 4, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(29, '2405', 70, 'AC, Layar, Infocus, White Board', 4, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(30, '2502', 53, 'AC, Layar, Infocus, White Board', 5, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(31, '2602', 52, 'AC, Layar, Infocus, White Board', 6, '2014-05-12 17:41:04', '2014-05-12 17:41:04'),
+(32, '2603', 70, 'AC, Layar, Infocus, White Board', 6, '2014-05-12 17:41:05', '2014-05-12 17:41:05'),
+(33, 'Aula', 180, 'AC, Layar, Infocus, White Board', 1, '2014-05-12 17:41:05', '2014-05-12 17:41:05');
 
 -- --------------------------------------------------------
 
@@ -164,19 +149,23 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `created_at`, `updated_at`, `name`, `password`, `role`, `remember_token`) VALUES
-(4, '2014-04-11 11:48:05', '2014-05-08 00:00:37', 'Ivan', '$2y$10$Xp27HmOX8jj3gN3aHP5TYOOTa6zbh5KxgOcEad1eU.ElM1X7o/2My', 'Civitas', 'Ff3tT586Ub0tUl02CVS0MDJ0EPSOc0SbQfuPs8IVfZdDJdbThMIJsEAArscw'),
+(4, '2014-04-11 11:48:05', '2014-05-12 21:35:32', 'Ivan', '$2y$10$Xp27HmOX8jj3gN3aHP5TYOOTa6zbh5KxgOcEad1eU.ElM1X7o/2My', 'Civitas', '0SNUtHhpYHsWsVWqbkcgXE4N7kse0bfAu9Ux8EchwJ8Xa68N3xPTqnv6n62C'),
 (5, '2014-04-11 11:48:05', '2014-04-11 11:48:05', 'Ivan2', '123', 'Civitas', NULL),
 (9, '2014-04-14 00:10:57', '2014-04-14 00:10:57', 'Ivan3', '123', 'Civitas', NULL),
-(10, '2014-04-14 00:39:51', '2014-05-07 01:15:47', 'Humas', '$2y$10$Q.ZHRSt/b7GTTBCWXZweMumvCdrVxTDfF9.hpGECOVE1ASl.6rvcG', 'Humas', 'qZWjb1xSEIuUOEnx4bjaXYtOpgw0wM0Ze9kVcqVtML6eXfZa1gQcZIhPih0g'),
-(11, '2014-04-14 21:09:04', '2014-05-07 01:02:57', 'Perlengkapan', '$2y$10$rC.IFFlpiwbeKQxmNWVEuuDJY.JX87weTurndW/7DW.unopc3FY9i', 'Perlengkapan', 'axQZQhvijh1LCeW7DcA1DrL3d0qmXAh7gpK5gieOsT23Y4IzS1NVvGGMd3a2'),
-(12, '2014-04-14 21:09:04', '2014-04-14 21:09:04', 'Mahalum', '$2y$10$cmRc0Ed3...i3EObLf97K.0BTtED0RQnSLZaP8wDGyKiuXKHJjh9C', 'Mahalum', NULL);
+(10, '2014-04-14 00:39:51', '2014-05-12 21:00:21', 'Humas', '$2y$10$Q.ZHRSt/b7GTTBCWXZweMumvCdrVxTDfF9.hpGECOVE1ASl.6rvcG', 'Humas', 'z0eyRxIW6JfuubmS47ZM7jB0TZa8Q9u2OfpeWIdh6mO2sYwXzItzBJu70z7T'),
+(11, '2014-04-14 21:09:04', '2014-05-12 21:30:46', 'Perlengkapan', '$2y$10$rC.IFFlpiwbeKQxmNWVEuuDJY.JX87weTurndW/7DW.unopc3FY9i', 'Perlengkapan', 'VhM2TWqkItTiMQaDmc2YKSTRflFWfGwr5km2lySo2HY0Fr5REshrKPbizZtM'),
+(12, '2014-04-14 21:09:04', '2014-05-12 21:01:08', 'Mahalum', '$2y$10$cmRc0Ed3...i3EObLf97K.0BTtED0RQnSLZaP8wDGyKiuXKHJjh9C', 'Mahalum', 'eX221wOOq0YwStTrVo6wnuYNcihAfGz6WsftnSASqTNlLIhay8HbJiNPkbwO'),
+(13, '2014-05-12 19:30:35', '2014-05-12 19:51:04', 'ivan.putera', '', '', 'URqrfhn9UQCZz2nbXURzBSqXQT3RGvogM36ssRJdg8wcuQuaQr1S024aRcb3'),
+(14, '2014-05-12 19:41:22', '2014-05-12 21:39:36', 'ibrahim.nurandita', '', '', 'Pva3LqS1xKXdcULnbZUIn4AOKUFYJgTcTsAL1y0HmkzWtKqNQLEdw4LT95dQ'),
+(15, '2014-05-12 19:51:18', '2014-05-12 19:54:39', 'gladhi.guarddin', '', '', 'IdarhhULlCxLgPPFhB9gvWnP6ILAWPWjFl866yoqslJherc94n08EawpaxwQ'),
+(16, '2014-05-12 20:21:30', '2014-05-12 20:22:27', 'astri.purwadhanty', '', '', 'RHvHdFzsZ1uZED72HEWFZtIYxtVVDnhbNPBRTHlB9QsYf069LL8lpql5ZwB2');
 
 -- --------------------------------------------------------
 

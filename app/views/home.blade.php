@@ -1,49 +1,37 @@
 @extends('layout')
 @section('content')
-<article id="slider">
-	
-	<!-- Slider Setup -->
-	<input checked type="radio" name="slider" id="slide1"/>
-	<input type="radio" name="slider" id="slide2" />
-	<input type="radio" name="slider" id="slide3" />
-	<input type="radio" name="slider" id="slide4" />
-	<input type="radio" name="slider" id="slide5" />	
-
-	<!-- The Slider -->
-	<div id="slides">		
-		<div id="overflow">			
-			<div class="inner">				
-				<article>
-					<img src="http://www.phlume.com/chad/testtest/1.jpg" />
-				</article>					
-				<article>
-                    <img src="http://www.phlume.com/chad/testtest/2.jpg" />
-				</article>					
-				<article>
-					<img src="http://www.phlume.com/chad/testtest/3.jpg" />
-				</article>
-				<article>
-                	<img src="http://www.phlume.com/chad/testtest/4.jpg" />
-				</article>
-			</div> <!-- .inner -->
-		</div> <!-- #overflow -->
-	</div> <!-- #slides -->
-	<!-- Controls and Active Slide Display -->
-
-	<div id="controls">
-		<label for="slide1"></label>
-		<label for="slide2"></label>
-		<label for="slide3"></label>
-		<label for="slide4"></label>
-		<label for="slide5"></label>
-	</div> <!-- #controls -->
-	
-	<div id="active">
-		<label for="slide1"></label>
-		<label for="slide2"></label>
-		<label for="slide3"></label>
-		<label for="slide4"></label>
-		<label for="slide5"></label>
-	</div> <!-- #active -->
-</article>	
+<div id="banner">
+	</br>
+	<p class="center title">Selamat Datang di SIJAMIL</p>
+	<p class="center subtitle">Sistem Peminjaman Ruangan Fasilkom</p>
+</div>
+<div id="banner2">
+	</br>
+	<div class="ui three column grid">
+		<div class="column">
+			<div class="center">
+				<i class="huge inverted question icon"></i>
+			</div>
+			<p class="ui header inverted center">Apa Itu Sijamil?</p>
+			<p class="ui penjelasan center">Sijamil adalah sebuah Sistem Peminjaman Ruangan Fasilkom yang terdigitalisasi.
+				</p>
+		</div>
+		<div class="column">
+			<div class="center">
+				<i class="huge inverted users icon"></i>
+			</div>
+			<p class="ui header inverted center">Kenapa Menggunakan Sijamil?</p>
+			<p class="ui penjelasan center">Dalam rangka menjadikan Fasilkom sebagai pusat unggulan di bidang Ilmu Komputer
+				dan Teknologi Informasi di Indonesia, maka dibuatlah Sijamil ini.
+		</div>
+		<div class="column">
+			<div class="center">
+				<i class="huge inverted briefcase icon"></i>
+			</div>
+			<p class="ui header inverted center">Bagaimana Menggunakan Sijamil?</p>
+			<p class="ui penjelasan center">Klik menu Ruangan dan mulai meminjam ruangan yang ingin digunakan.
+				Informasi lebih lanjut dapat dilihat di halaman <a href="">FAQ</a></p>
+		</div>
+	</div>
+</div>
 @stop
