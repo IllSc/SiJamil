@@ -7,6 +7,7 @@
 		{{HTML::script('js/jquery-1.11.0.min.js');}}
 		{{HTML::script('js/jquery.tablesort.min.js');}}
 		<title>{{ isset($title) ? $title : 'Sesuatu'}}</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 		<script type="text/javascript">
 		// Untuk filter tabel
 			$(function() {
