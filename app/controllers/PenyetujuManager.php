@@ -82,7 +82,34 @@ class PenyetujuManager extends \BaseController {
 		$form->status = "Diterima";
 		$form->ket_perlengkapan = $input['keterangan'];
 		$form->save();
+
 		return Redirect::action('PenyetujuManager@perlengkapan');
+	}
+	public function sentMail($nama,$ruangan,$mulai,$selesai)
+	{
+		$html = '<html><head><title>Surat Meminjam</title>'.
+    			"<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>".
+    			"</head><body><h2 style=\"font-family: 'Open Sans', sans-serif;\">".
+    			'Surat Pinjaman</h2><hr><table border="0"><tr><td>Nama:</td>'.
+    			'<td>'.$nama.'</td>'.
+    			'</tr><tr><td>Ruangan:</td>'.
+    			'<td>'.$ruangan.'</td>'.
+    			'</tr><tr><td>Mulai:</td>'.
+    			'<td>'.$mulai.'</td>'.
+    			'</tr><tr><td>Selesai:</td>'.
+    			'<td>'.$selesai.'</td>'.
+    			'</tr></table></body></html>';
+    	$pdf = PDF::load($html, 'A4', 'portrait')->output();
+    	define('BUDGETS_DIR', public_path('uploads/pdf'));
+    	$outputName = str_random(10); // str_random is a [Laravel helper](http://laravel.com/docs/helpers#strings)
+		$pdfPath = BUDGETS_DIR.'/'.$outputName.'.pdf';
+		File::put($pdfPath, PDF::load($view, 'A4', 'portrait')->output());
+		Mail::send('emails.pdf', $data, function($message) use ($pdfPath){
+    	$message->from('us@example.com', 'Laravel');
+    	$message->to('you@example.com');
+    	$message->attach($pdfPath);
+    	});
+
 	}
 
 

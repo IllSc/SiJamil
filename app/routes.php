@@ -143,6 +143,24 @@ Route::get('/user/cas', function()
 Route::get('/', array('as' => 'home', function () {
     return View::make('home');
 }))->before('auth');
+Route::get('/pdf', function()
+{
+	define('BUDGETS_DIR', public_path('uploads/pdf'));
+	if (!is_dir(BUDGETS_DIR)){
+    mkdir(BUDGETS_DIR, 0755, true);
+	}
+    $html = '<html><head><title>Surat Meminjam</title>'.
+    "<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>".
+    "</head><body><h2 style=\"font-family: 'Open Sans', sans-serif;\">".
+    'Surat Pinjaman</h2><hr><table border="0"><tr><td>Nama:</td><td>Ivan</td></tr><tr><td>Ruangan:</td><td>1111</td></tr><tr><td>Jam:</td><td>12:01</td></tr></table></body></html>';
+    //$pdf = PDF::load($html, 'A4', 'portrait')->output();
+    
+    $outputName = str_random(10); // str_random is a [Laravel helper](http://laravel.com/docs/helpers#strings)
+	$pdfPath = BUDGETS_DIR.'/'.$outputName.'.pdf';
+	File::put($pdfPath, PDF::load($html, 'A4', 'portrait')->output());
+	return "Ole!";
+    //Redirect::to('/');
+});
 
 Route::get('/home',array('as' =>'home','before' => 'auth',function()
 {
