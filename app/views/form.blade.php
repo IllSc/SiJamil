@@ -3,7 +3,7 @@
 	{{ Form::open(array('url' => '/simpanPinjam/'.$id,'class'=>'ui form segment')) }}
 	<div class="field">
 	{{ Form::label('E-mail') }}
-		{{ Form::text('email',null,['class'=>'ui input', 'placeholder'=>'gunakan email UI (cth: chanek@ui.ac.id)','pattern'=>'^\D{0,15}\@ui.ac.id$','required' => 'required']) }}
+		{{ Form::text('email',null,['class'=>'ui input', 'placeholder'=>'gunakan email UI (cth: chanek@ui.ac.id)','pattern'=>'^\D{0,30}\@ui.ac.id$','required' => 'required']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Nomor Handphone') }}
@@ -48,5 +48,5 @@
 			    @endforeach
 			</ul>
 		</div>
-		@endif
+	@endif
 @stop

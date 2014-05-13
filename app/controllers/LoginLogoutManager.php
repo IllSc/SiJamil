@@ -22,8 +22,20 @@ class LoginLogoutManager extends \BaseController {
 
 	public function logout()
 	{
-		Auth::logout(); // log the user out of our application
-		return Redirect::to('login'); // redirect the user to the login screen
+		// Auth::logout(); // log the user out of our application
+		// return Redirect::to('login'); // redirect the user to the login screen
+
+		if(Auth::guest() === false)
+    	{
+    		// redirect jika berhasil logout ke url xxx
+    		$arr = array('url'=>'http://localhost/sijamil/public/');
+        	return Cas::logout($arr);
+
+    	}
+    	else
+    	{
+        	return Redirect::to('/');
+    	}
 	}
 
 	public function login()

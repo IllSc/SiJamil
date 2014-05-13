@@ -113,45 +113,36 @@ Route::get('/seed/ruangan', function()
 	$ruangan->lantai = '1';
 	$ruangan->save();
 
-
 });
 
-Route::get('auth',function(){echo(Auth::user()->role);});
-Route::get('/seed/forms',function(){
-	$form = new Isian;
-	$faker = Faker::create();
-	$form->email = $faker->safeEmail;
-	$form->tanggal = $faker->date();
-	$form->jam_peminjaman = $faker->time();
-	$form->keperluan = $faker->sentence($nbWords = 6);
-	$form->fasilitas = $faker->sentence($nbWords = 2);
-	$form->jumlah_peserta = 29;
-	$form->status = 'disamakan';
-
-	$pengguna = User::find(4);
-	$ruangan = Ruangan::find(9);
-
-	$form->ruangan()->associate($ruangan);
-	$form->user()->associate($pengguna);
-	$form->save();
-
+Route::get('auth',function()
+{
+	if (Auth::guest())
+    {
+        return Cas::login();
+    }
+	//echo(Auth::user()->role);
 });
-Route::get('/seed/penyetuju',function(){
-	$user = new User;
-	$user->name = 'Seseorang';
-	$user->password = Hash::make('234');
-	$user->role = 'Penyetuju';
-	$user->save();
-});
+
 Route::get('/login', function()
 {
 	return View::make('login',array('title' => 'Login'));
 });
 
+Route::get('/cas', array('as' => 'cas', function ()
+{
+    return View::make('home');
+}))->before('cas');
+
+Route::get('/user/cas', function()
+{
+    if(Cas::check()) return Cas::reload();
+    //Redirect::to('/');
+});
 
 Route::get('/', array('as' => 'home', function () {
     return View::make('home');
-}))->before('auth');;
+}))->before('auth');
 
 Route::get('/home',array('as' =>'home','before' => 'auth',function()
 {
@@ -167,18 +158,23 @@ Route::get('/home',array('as' =>'home','before' => 'auth',function()
 	}
 	
 }))->before('auth');
+
 Route::get('/form',array('as'=>'form',function()
 {
 	return View::make('form',array('title' => 'Form'));
 }))->before('auth');
+
+
 Route::get('/approval',array('as'=>'approval',function()
 {
 	return View::make('approval',array('title' => 'Approval'));
 }))->before('auth');
+
 Route::get('/ruangan',array('as'=>'ruangan',function()
 {
 	return View::make('ruangan',array('title' => 'Ruangan'));
 }))->before('auth');
+
 Route::get('/humas',array('as'=>'humas',function()
 {
 	return View::make('humas',array('title' => 'Humas'));
@@ -188,15 +184,21 @@ Route::get('/deskripsi',array('as'=>'deskripsi',function()
 {
 	return View::make('deskripsi',array('title' => 'deskripsi'));
 }))->before('auth');
+
 Route::get('logout',array('as'=>'logout','uses'=>'LoginLogoutManager@logout'))->before('auth');
+
 Route::get('login',array('as'=>'login','uses'=>'LoginLogoutManager@login'));
+
 Route::get('/ruangan','RuanganManager@ruanganHome')->before('auth');
+
 Route::get('/ruangan/{id}','RuanganManager@show')->before('auth');
+
 Route::get('/pinjam/{id}','RuanganManager@pinjam')->before('auth');
 
-Route::post('/simpanPinjam/{id}','RuanganManager@simpanPinjaman')->before('auth');
-Route::post('login',array('uses'=>'LoginLogoutManager@doLogin'));
 
+Route::post('/simpanPinjam/{id}','RuanganManager@simpanPinjaman')->before('auth');
+
+Route::post('login',array('uses'=>'LoginLogoutManager@doLogin'));
 
 Route::filter('mahalum',function()
 {
@@ -219,7 +221,7 @@ Route::filter('perlengkapan',function()
 	}
 });
 
-Route::filter('penyetuju',function()
+Route::filter('civitas',function()
 {
 	$role = Auth::user()->role;
 	if ($role != "Perlengkapan" && $role != "Humas" && $role != "Mahalum" ) {
@@ -247,12 +249,3 @@ Route::get('hapusForm/{id}',array('before'=>array('auth'),'uses'=>'RuanganManage
 Route::get('/humas',array('before'=>array('auth','humas'),'uses'=>'PenyetujuManager@humas','title'=>'Humas'));
 Route::get('/perlengkapan',array('before'=>array('auth','perlengkapan'),'uses'=>'PenyetujuManager@perlengkapan','title'=>'Perlengkapan'));
 Route::get('/mahalum',array('before'=>array('auth','mahalum'),'uses'=>'PenyetujuManager@mahalum','title'=>'Mahalum'));
-
-Route::get('/hahaha', function()
-{
-    $html = '<html><body>'
-            . '<p>Put your html here, or generate it with your favourite '
-            . 'templating system.</p>'
-            . '</body></html>';
-    return PDF::load($html, 'A4', 'portrait')->download('my_pdf');
-});
