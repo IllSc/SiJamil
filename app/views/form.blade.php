@@ -11,7 +11,7 @@
 	</div>
 	<div class="field">
 	{{ Form::label('Tanggal Peminjaman') }}
-		{{ Form::text('tanggal',null,['class'=>'ui input', 'placeholder'=>'Tanggal Peminjaman (cth:12-2-2009)','required' => 'required']) }}
+		{{ Form::text('tanggal',null,['class'=>'ui input', 'placeholder'=>'Tanggal Peminjaman (cth:YYYY-MM-DD )','required' => 'required','pattern'=>'[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Jam Mulai') }}
