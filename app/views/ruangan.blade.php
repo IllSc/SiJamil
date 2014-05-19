@@ -5,6 +5,15 @@
 		@if($ruangan->isEmpty())
 		<p>tidak ada ruangan pada database</p>
 		@else
+			@if($errors->has())
+			<div class="ui success message">
+				<i class="close icon"></i>
+				  <div class="header">
+				    Form berhasil disimpan
+				  </div>
+				  <p>Silahkan menunggu hingga proses approval selesai dilakukan. Untuk melihat proses approval dapat dilihat di halaman Approval</p>
+			</div>
+			@endif
 		<!-- table starts here -->
 		<div id="table">
 			<table class="ui sortable table segment">

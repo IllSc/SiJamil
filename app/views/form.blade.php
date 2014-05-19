@@ -7,19 +7,19 @@
 	</div>
 	<div class="field">
 	{{ Form::label('Nomor Handphone') }}
-		{{ Form::text('handphone',null,['class'=>'ui input', 'placeholder'=>'Nomor Handphone (cth: 089612345678)','pattern'=>'[0-9][0-9]*','required' => 'required']) }}
+		{{ Form::text('handphone',null,['class'=>'ui input', 'placeholder'=>'Nomor Handphone (cth: 089612345678)','pattern'=>'[0-9][0-9]*{12,14}','required' => 'required']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Tanggal Peminjaman') }}
-		{{ Form::text('tanggal',null,['class'=>'ui input', 'placeholder'=>'Tanggal Peminjaman (cth:YYYY-MM-DD )','required' => 'required','pattern'=>'[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}']) }}
+		{{ Form::text('tanggal',null,['class'=>'ui input', 'placeholder'=>'Tanggal Peminjaman (cth:YYYY-MM-DD )','required' => 'required','pattern'=>'[2][0][1][0-9]-[0][0-9]-[0][0-9]|[2][0][1][0-9]-[0][0-9]-[1-2][0-9]|[2][0][1][0-9]-[0][0-9]-[3][0-2]|[2][0][1][0-9]-[1][0-2]-[0][0-9]|[2][0][1][0-9]-[1][0-2]-[1-2][0-9]|[2][0][1][0-9]-[1][0-2]-[3][0-2]|']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Jam Mulai') }}
-		{{ Form::text('jam_mulai',null,['class'=>'ui input', 'placeholder'=>'Jam Mulai (cth: 14:30)','pattern'=>'[0-9]*:[0-9]*','required' => 'required']) }}
+		{{ Form::text('jam_mulai',null,['class'=>'ui input', 'placeholder'=>'Jam Mulai (cth: 14:30)','pattern'=>'[0][0-9]:[0-5][0-9]|[1][0-9]:[0-5][0-9]|[2][0-3]:[0-5][0-9]','required' => 'required']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Jam Selesai') }}
-		{{ Form::text('jam_selesai',null,['class'=>'ui input', 'placeholder'=>'Jam Selesai (cth: 14:30)','pattern'=>'[0-9]*:[0-9]*','required' => 'required']) }}
+		{{ Form::text('jam_selesai',null,['class'=>'ui input', 'placeholder'=>'Jam Selesai (cth: 14:30)','pattern'=>'[0][0-9]:[0-5][0-9]|[1][0-9]:[0-5][0-9]|[2][0-3]:[0-5][0-9]','required' => 'required']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Nama Barang') }}
@@ -27,7 +27,7 @@
 	</div>
 	<div class="field">
 	{{ Form::label('Jumlah Peserta') }}
-		{{ Form::text('peserta',null,['class'=>'ui input', 'placeholder'=>'Jumlah Peserta','pattern'=>'[0-9]+{2}','required' => 'required']) }}
+		{{ Form::text('peserta',null,['class'=>'ui input', 'placeholder'=>'Jumlah Peserta','pattern'=>'[0-9]+{0,3}','required' => 'required']) }}
 	</div>
 	<div class="field">
 	{{ Form::label('Keperluan') }}

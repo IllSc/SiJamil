@@ -7,6 +7,7 @@
 				    	<th>Ruangan</th>
 				    	<th>Status</th>
 						<th>Keterangan</th>
+						<th>Surat Peminjaman</th>
 						<th>Hapus</th>
 				    </tr>
 				</thead>
@@ -23,6 +24,13 @@
 						<td>{{$f->status}}</td>
 						@endif
 						<td>{{"Keterangan Mahalum : ".$f->ket_mahalum ." Keterangan Perlengkapan : ".$f->ket_perlengkapan ." Keterangan Humas : ".$f->ket_humas ." Keterangan Penolakan : ".$f->ket_tolak}}</td>
+						<td>
+							<div class="circular ui icon button">
+								<a href="{{$f->Link}}">
+									<i class="ok circle icon"></i>
+								</a>
+							</div>
+						</td>
 						<td>
 							<div class="circular ui icon button">
 								<a href="{{action('RuanganManager@hapusForm',$f->id)}}">
