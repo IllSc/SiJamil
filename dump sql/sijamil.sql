@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2014 at 06:41 AM
+-- Generation Time: May 19, 2014 at 10:20 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -46,10 +46,21 @@ CREATE TABLE IF NOT EXISTS `forms` (
   `jam_selesai` time NOT NULL,
   `nomor_telepon` text COLLATE utf8_unicode_ci NOT NULL,
   `visible_by_civitas` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `Link` varchar(100) COLLATE utf8_unicode_ci DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `forms_id_peminjam_foreign` (`id_peminjam`),
   KEY `forms_id_ruangan_foreign` (`id_ruangan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `forms`
+--
+
+INSERT INTO `forms` (`id`, `email`, `tanggal`, `jam_peminjaman`, `keperluan`, `fasilitas`, `jumlah_peserta`, `status`, `ket_mahalum`, `ket_humas`, `ket_perlengkapan`, `ket_tolak`, `created_at`, `updated_at`, `id_peminjam`, `id_ruangan`, `jam_selesai`, `nomor_telepon`, `visible_by_civitas`, `Link`) VALUES
+(3, 'chanek@ui.ac.id', '2014-05-29', '14:30:00', 'qwertyuiop', 'apapun yang ada', 23, 'Tolak', '', '', '', 'Akan dipakai', '2014-05-14 01:27:43', '2014-05-14 01:31:05', 11, 20, '15:30:00', '1234578', 'yes', ''),
+(4, 'chanek@ui.ac.id', '2014-05-30', '14:30:00', 'qwertyu', 'qwertyu', 12345678, 'Diterima', 'qwetyuiop', 'Bisa', 'qwert', '', '2014-05-14 01:35:28', '2014-05-14 01:49:14', 4, 20, '16:30:00', '123456', 'yes', ''),
+(5, 'chan@ui.ac.id', '2014-05-30', '14:30:00', 'qwertyui', 'qwertyu', 12345, 'Tolak', '', '', '', 'lalala', '2014-05-14 01:38:01', '2014-05-14 01:38:42', 4, 26, '16:30:00', '123456', 'yes', ''),
+(6, 'ibrahim.nurandita@ui.ac.id', '2014-10-10', '15:00:00', 'asidsad\r\n', 'Haha', 30, 'Diterima', 'lkaslkdjsad', 'oke', 'yeaah', '', '2014-05-19 00:52:57', '2014-05-19 01:17:32', 4, 20, '16:30:00', '085692678181', 'yes', 'http://localhost/sijamil/public/uploads/budgets/UISq5g18kX.pdf');
 
 -- --------------------------------------------------------
 
@@ -149,23 +160,25 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `created_at`, `updated_at`, `name`, `password`, `role`, `remember_token`) VALUES
-(4, '2014-04-11 11:48:05', '2014-05-12 21:35:32', 'Ivan', '$2y$10$Xp27HmOX8jj3gN3aHP5TYOOTa6zbh5KxgOcEad1eU.ElM1X7o/2My', 'Civitas', '0SNUtHhpYHsWsVWqbkcgXE4N7kse0bfAu9Ux8EchwJ8Xa68N3xPTqnv6n62C'),
+(4, '2014-04-11 11:48:05', '2014-05-19 01:07:14', 'Ivan', '$2y$10$Xp27HmOX8jj3gN3aHP5TYOOTa6zbh5KxgOcEad1eU.ElM1X7o/2My', 'Civitas', 'W2qwrBO1lMF5esiX7ux1zwrly1PNnBuaWGpyGKcnQMGiVu0iLjnV4PsbW4BJ'),
 (5, '2014-04-11 11:48:05', '2014-04-11 11:48:05', 'Ivan2', '123', 'Civitas', NULL),
 (9, '2014-04-14 00:10:57', '2014-04-14 00:10:57', 'Ivan3', '123', 'Civitas', NULL),
-(10, '2014-04-14 00:39:51', '2014-05-12 21:00:21', 'Humas', '$2y$10$Q.ZHRSt/b7GTTBCWXZweMumvCdrVxTDfF9.hpGECOVE1ASl.6rvcG', 'Humas', 'z0eyRxIW6JfuubmS47ZM7jB0TZa8Q9u2OfpeWIdh6mO2sYwXzItzBJu70z7T'),
-(11, '2014-04-14 21:09:04', '2014-05-12 21:30:46', 'Perlengkapan', '$2y$10$rC.IFFlpiwbeKQxmNWVEuuDJY.JX87weTurndW/7DW.unopc3FY9i', 'Perlengkapan', 'VhM2TWqkItTiMQaDmc2YKSTRflFWfGwr5km2lySo2HY0Fr5REshrKPbizZtM'),
-(12, '2014-04-14 21:09:04', '2014-05-12 21:01:08', 'Mahalum', '$2y$10$cmRc0Ed3...i3EObLf97K.0BTtED0RQnSLZaP8wDGyKiuXKHJjh9C', 'Mahalum', 'eX221wOOq0YwStTrVo6wnuYNcihAfGz6WsftnSASqTNlLIhay8HbJiNPkbwO'),
-(13, '2014-05-12 19:30:35', '2014-05-12 19:51:04', 'ivan.putera', '', '', 'URqrfhn9UQCZz2nbXURzBSqXQT3RGvogM36ssRJdg8wcuQuaQr1S024aRcb3'),
-(14, '2014-05-12 19:41:22', '2014-05-12 21:39:36', 'ibrahim.nurandita', '', '', 'Pva3LqS1xKXdcULnbZUIn4AOKUFYJgTcTsAL1y0HmkzWtKqNQLEdw4LT95dQ'),
+(10, '2014-04-14 00:39:51', '2014-05-19 00:55:11', 'Humas', '$2y$10$Q.ZHRSt/b7GTTBCWXZweMumvCdrVxTDfF9.hpGECOVE1ASl.6rvcG', 'Humas', 'y6zHuljgBRafFIp8nKTtYFoXnRHsefZE02mPLPaktec3QrioekzOGRGbYAU5'),
+(11, '2014-04-14 21:09:04', '2014-05-19 01:17:34', 'Perlengkapan', '$2y$10$rC.IFFlpiwbeKQxmNWVEuuDJY.JX87weTurndW/7DW.unopc3FY9i', 'Perlengkapan', '3YFeI5e1nfIxjBk230KFSmKFED7Shl9fO8XFPfARRC0RhPrZMrEHm6ps3cVk'),
+(12, '2014-04-14 21:09:04', '2014-05-19 00:58:08', 'Mahalum', '$2y$10$cmRc0Ed3...i3EObLf97K.0BTtED0RQnSLZaP8wDGyKiuXKHJjh9C', 'Mahalum', 'WKMsRbLhdUfKwsArOvsIPfgUxnE8NZgpyTrFY4Juua23qwxoFYztDAQDcCXp'),
+(13, '2014-05-12 19:30:35', '2014-05-19 00:51:53', 'ivan.putera', '', '', 'Bms4gYM7PUlZL2h4rcwcHVfwer6d62lbbXE9L6hIyoQfxfuXLbpreGqbg3Sv'),
+(14, '2014-05-12 19:41:22', '2014-05-18 23:58:34', 'ibrahim.nurandita', '', '', 'Ri07KNMiqGTre7uGKjbUJPlcoc8ihlWIDjt77RAz8ZouuQEGoI1XCp5Ky7K6'),
 (15, '2014-05-12 19:51:18', '2014-05-12 19:54:39', 'gladhi.guarddin', '', '', 'IdarhhULlCxLgPPFhB9gvWnP6ILAWPWjFl866yoqslJherc94n08EawpaxwQ'),
-(16, '2014-05-12 20:21:30', '2014-05-12 20:22:27', 'astri.purwadhanty', '', '', 'RHvHdFzsZ1uZED72HEWFZtIYxtVVDnhbNPBRTHlB9QsYf069LL8lpql5ZwB2');
+(16, '2014-05-12 20:21:30', '2014-05-12 20:22:27', 'astri.purwadhanty', '', '', 'RHvHdFzsZ1uZED72HEWFZtIYxtVVDnhbNPBRTHlB9QsYf069LL8lpql5ZwB2'),
+(17, '2014-05-14 00:48:40', '2014-05-14 01:09:20', 'gede.hermawan', '', '', 'eUaKOrGOtAYNf7n50ylePEhfcWHewRGIXLkNZVCpounl8YUXJDdJf8lTykzm'),
+(18, '2014-05-14 01:10:43', '2014-05-14 01:10:53', 'puji.martadinata', '', '', 'UDEfjKtrnrCKE0TqQOZpK5B4Um7A7WTuK3LBNLycBGiDKINcIMRWbSUtxl7F');
 
 -- --------------------------------------------------------
 

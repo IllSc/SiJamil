@@ -96,10 +96,18 @@ class PenyetujuManager extends \BaseController {
 		    mkdir(BUDGETS_DIR, 0755, true);
 		}
 
-		$html = '<html><body>'
-	            . '<p>Put your html here, or generate it with your favourite '
-	            . 'templating system.</p>'
-	            . '</body></html>';
+		$html = '<html><head><title>Surat Meminjam</title>'.
+    			"<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>".
+    			"</head><body><h2 style=\"font-family: 'Open Sans', sans-serif;\">".
+    			'Surat Pinjaman</h2><hr><table border="0"><tr><td>Nama:</td>'.
+    			'<td>'.$form->email.'</td>'.
+    			'</tr><tr><td>Ruangan:</td>'.
+    			'<td>'.'2301'.'</td>'.
+    			'</tr><tr><td>Mulai:</td>'.
+    			'<td>'.$form->jam_peminjaman.'</td>'.
+    			'</tr><tr><td>Selesai:</td>'.
+    			'<td>'.$form->jam_selesai.'</td>'.
+    			'</tr></table></body></html>';
 
 		$outputName = str_random(10); // str_random is a [Laravel helper](http://laravel.com/docs/helpers#strings)
 		$pdfPath = BUDGETS_DIR.'/'.$outputName.'.pdf';
